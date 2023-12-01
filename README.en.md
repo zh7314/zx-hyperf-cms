@@ -1,36 +1,36 @@
-# zx-hyperf-website
+# CMS, enterprise official website general Golang management system
 
-#### Description
-基于hyperf的cms系统
-
-#### Software Architecture
-Software architecture description
-
-#### Installation
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+[中文文档](./README.md)
 
 
-#### Gitee Feature
+## Framework introduction
+[Goravel](https://github.com/goravel/goravel)    
+[SCUI](https://gitee.com/lolicode/scui)
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+### Back-end development component
+go 1.20     
+Goravel 1.13     
+
+### database sql(use the latest date file)
+`goravel\doc\sql_bak` 
+mysql 8.0
+Default system account password: admin/admin
+
+### Front-end development component
+scui 1.6.9      
+node v14.21.3       
+
+### curd tools
+https://gitee.com/open-php/php-code-generator  
+https://github.com/zh7314/php-code-generator
+
+### effect picture
+![1.png](./images/1.png)
+![2.png](./images/2.png)
+![3.png](./images/3.png)
+![4.png](./images/4.png)
+![5.png](./images/5.png)
+![6.png](./images/6.png)
+![7.png](./images/7.png)
+![8.png](./images/8.png)
