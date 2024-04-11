@@ -3,120 +3,43 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid 'c0a45238d40788716b481bd9253d181c8ae9949d'
-    oldFile: !uuid '0db1ea05ce66c04c50ef4fc3d875f3bc67c0e4f0'
-  /hyperf/.air.toml:
+    newFile: !uuid '7203863ad665a0c1256dbeccbd9a5d6758ecdcb8'
+    oldFile: !uuid 'c0a45238d40788716b481bd9253d181c8ae9949d'
+  /hyperf/app:
+    newFile: !uuid '44ef78dde9dd9bd28f9052a8f2c4e3ef0893f8d0'
+    oldFile: !uuid 'a296bb3772860c5dec741aebb593bf26a13eb53a'
+  /hyperf/app/Controller:
+    newFile: !uuid '8dcbe25ca067b96922b1b877afae2d13504f9167'
+    oldFile: !uuid 'f1e396d39116eb63109723ae13e3cf0806de0f62'
+  /hyperf/app/Controller/Admin:
+    newFile: !uuid '25af9fb6e30ec373fd1c043253a36fa207e29466'
+    oldFile: null
+  /hyperf/app/Controller/Admin/IndexController.php:
+    newFile: !uuid 'de9a4c26e27ce121495547ba24d0c53bcf88731b'
+    oldFile: null
+  /hyperf/app/Controller/IndexController.php:
     newFile: null
-    oldFile: !uuid '7875a2dfddc453d118c464b8e15e8319b7b3ca01'
-  /hyperf/README_zh.md:
-    newFile: null
-    oldFile: !uuid '19cbd2495e57caaa0d2852185d65b364e74f1d0d'
-  /hyperf/bootstrap:
-    newFile: null
-    oldFile: !uuid '1a97749148d1f9b7f8e4ae8408b82bd30ee38410'
-  /hyperf/bootstrap/app.go:
-    newFile: null
-    oldFile: !uuid '7532a9438ecb7c4da98369c5b47f4b78ff104c89'
-  /hyperf/database:
-    newFile: null
-    oldFile: !uuid '80b2630fb8a24586663279a4377949225d033cf7'
-  /hyperf/database/migrations:
-    newFile: null
-    oldFile: !uuid '82e3a754b6a0fcb238b03c0e47d05219fbf9cf89'
-  /hyperf/database/migrations/.gitignore:
-    newFile: null
-    oldFile: !uuid 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391'
-  /hyperf/database/seeders:
-    newFile: null
-    oldFile: !uuid 'b9349f22b00ab40d613c4716435d326b527368b4'
-  /hyperf/database/seeders/database_seeder.go:
-    newFile: null
-    oldFile: !uuid '45b8edf4897901e6cd4ee9cb65b9f17b40e1871d'
-  /hyperf/doc:
-    newFile: null
-    oldFile: !uuid '607f99d0b646368bde2a00ab83454e9997428984'
-  /hyperf/doc/sql_bak:
-    newFile: null
-    oldFile: !uuid '23be614b776dfd609e1fc9e0dd12f17a0c9449b4'
-  /hyperf/doc/sql_bak/web-2023-07-29.sql:
-    newFile: null
-    oldFile: !uuid 'e1deddd161675cabb763b0e5cd09428076bf841f'
-  /hyperf/go.mod:
-    newFile: null
-    oldFile: !uuid 'a2e3265ae33fda5a28ca6eaf40d793fe53cfc2be'
-  /hyperf/go.sum:
-    newFile: null
-    oldFile: !uuid '5555dff906e24ebc85b06c0f3a7d1816827ee30b'
-  /hyperf/main.go:
-    newFile: null
-    oldFile: !uuid '93c5a015b264a1e51d8085366d012b2b04f59aa2'
-  /hyperf/public:
-    newFile: null
-    oldFile: !uuid '78ea226843fd26bcb5b2663317cd2872c37e6308'
-  /hyperf/public/upload:
-    newFile: null
-    oldFile: !uuid '0fcdfd2a18c4acbbc8b52970aa034b1bc3009f83'
-  /hyperf/public/upload/file:
-    newFile: null
-    oldFile: !uuid '82e3a754b6a0fcb238b03c0e47d05219fbf9cf89'
-  /hyperf/public/upload/file/.gitignore:
-    newFile: null
-    oldFile: !uuid 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391'
-  /hyperf/public/upload/image:
-    newFile: null
-    oldFile: !uuid '82e3a754b6a0fcb238b03c0e47d05219fbf9cf89'
-  /hyperf/public/upload/image/.gitignore:
-    newFile: null
-    oldFile: !uuid 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391'
-  /hyperf/resources:
-    newFile: null
-    oldFile: !uuid 'caa4b6fae72d8df4c65320b2f48f2991b2acb761'
-  /hyperf/resources/views:
-    newFile: null
-    oldFile: !uuid '6d328779e90900979fd61818ef8dcea27d58f258'
-  /hyperf/resources/views/welcome.tmpl:
-    newFile: null
-    oldFile: !uuid '3c2fc7d01a05be4d20a680777296fbef566a0541'
-  /hyperf/routes:
-    newFile: null
-    oldFile: !uuid 'b98d9595865d29de008709ca20faf040cc0569ea'
-  /hyperf/routes/api.go:
-    newFile: null
-    oldFile: !uuid '4593a5f3fbce63d2b792361c65f55a67837800e2'
-  /hyperf/routes/grpc.go:
-    newFile: null
-    oldFile: !uuid '31fe5871ef5e0f6121e8c1abcec345e53d92a3df'
-  /hyperf/routes/web.go:
-    newFile: null
-    oldFile: !uuid '937dfdb673a86e3ef5e1c4fb02bd7aa2e9930886'
-  /hyperf/storage:
-    newFile: null
-    oldFile: !uuid 'b03695b8947b5638f01e67665d025219f29bba14'
-  /hyperf/storage/logs:
-    newFile: null
-    oldFile: !uuid '71d1f1aa02e6ecb4f13e1cc36cd95abb538f0d4a'
-  /hyperf/storage/logs/.gitignore:
-    newFile: null
-    oldFile: !uuid 'a3a0c8b5f48c0260a4cb43aa577f9b18896ee280'
-  /hyperf/storage/temp:
-    newFile: null
-    oldFile: !uuid '71d1f1aa02e6ecb4f13e1cc36cd95abb538f0d4a'
-  /hyperf/storage/temp/.gitignore:
-    newFile: null
-    oldFile: !uuid 'a3a0c8b5f48c0260a4cb43aa577f9b18896ee280'
-  /hyperf/tests:
-    newFile: null
-    oldFile: !uuid '48ebab791c4133ee41264c3a3565188a7ada4afc'
-  /hyperf/tests/feature:
-    newFile: null
-    oldFile: !uuid 'b56d5ec0b6a4cb9dfa96d9a4adddfe276d2eca54'
-  /hyperf/tests/feature/example_test.go:
-    newFile: null
-    oldFile: !uuid 'f85ed9ebefb20d8d12592d60d0bd7084d5a5528b'
-  /hyperf/tests/test_case.go:
-    newFile: null
-    oldFile: !uuid '362e12221d9295b2c2645b29a31695141031dfeb'
-gitCommitId: !uuid '7f7304ebae7af38af8d8cc2a495e36b8a68c9c0a'
-renames: {
-  }
-revisionId: 5
+    oldFile: !uuid 'fbd0748af27a25d9917f7305a493bc73a238290c'
+  /hyperf/app/Controller/Web:
+    newFile: !uuid 'e5d9442f52b846f8ef29f6c123d479efae125b2a'
+    oldFile: null
+  /hyperf/app/Controller/Web/IndexController.php:
+    newFile: !uuid '7ef879ad83f0be01fe09863072aa6c3e7fd5bcff'
+    oldFile: null
+  /hyperf/app/Middleware:
+    newFile: !uuid 'c76ecea52bd3790d42b0c9e64b06184322098d28'
+    oldFile: !uuid 'c7216472d5024ee16d7959c235409fabf8ba13fd'
+  /hyperf/app/Middleware/AdminCheckMiddleware.php:
+    newFile: !uuid '296bb7c280df8b993a197a01b740b07251b2dcfe'
+    oldFile: !uuid '2f74a42d1542572018078495fbecf59e3517f2bb'
+  /hyperf/config:
+    newFile: !uuid 'f5173e47812d253dd267e31c622a7eb00449e0a3'
+    oldFile: !uuid 'e9868f28524748293995e645c2f8374c753b29e1'
+  /hyperf/config/routes.php:
+    newFile: !uuid '45dde31a40c8fa70b767dd14400ed22bce6a09c8'
+    oldFile: !uuid 'b6f1c5e208267f8bc56f5a3a74afe66881f2d381'
+gitCommitId: !uuid '073ece51ce22dfaa339dda6d0ac12309ca433e94'
+renames:
+  /hyperf/app/Controller/Admin/IndexController.php: /hyperf/app/Controller/IndexController.php
+  /hyperf/app/Controller/Web/IndexController.php: /hyperf/app/Controller/IndexController.php
+revisionId: 6
