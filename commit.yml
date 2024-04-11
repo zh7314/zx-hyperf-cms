@@ -3,43 +3,59 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid '7203863ad665a0c1256dbeccbd9a5d6758ecdcb8'
-    oldFile: !uuid 'c0a45238d40788716b481bd9253d181c8ae9949d'
+    newFile: !uuid '1826768ead315d5c1de3b4275d1c41cf393ff369'
+    oldFile: !uuid '7203863ad665a0c1256dbeccbd9a5d6758ecdcb8'
   /hyperf/app:
-    newFile: !uuid '44ef78dde9dd9bd28f9052a8f2c4e3ef0893f8d0'
-    oldFile: !uuid 'a296bb3772860c5dec741aebb593bf26a13eb53a'
-  /hyperf/app/Controller:
-    newFile: !uuid '8dcbe25ca067b96922b1b877afae2d13504f9167'
-    oldFile: !uuid 'f1e396d39116eb63109723ae13e3cf0806de0f62'
-  /hyperf/app/Controller/Admin:
-    newFile: !uuid '25af9fb6e30ec373fd1c043253a36fa207e29466'
+    newFile: !uuid 'd8824640bb39ec8c2340e42913058dd29067e0f3'
+    oldFile: !uuid '44ef78dde9dd9bd28f9052a8f2c4e3ef0893f8d0'
+  /hyperf/app/Utils:
+    newFile: !uuid '68b7b8deb2cd88be1bea27bc7687eb18ec410f95'
     oldFile: null
-  /hyperf/app/Controller/Admin/IndexController.php:
-    newFile: !uuid 'de9a4c26e27ce121495547ba24d0c53bcf88731b'
+  /hyperf/app/Utils/Function.php:
+    newFile: !uuid '8f6decf0dd68e4a22555f08da19b6c43d3f0818a'
     oldFile: null
-  /hyperf/app/Controller/IndexController.php:
+  /hyperf/app/Utils/GlobalCode.php:
+    newFile: !uuid '591590cb85e18da5529c4d1bb64941d442115775'
+    oldFile: null
+  /hyperf/app/Utils/GlobalMsg.php:
+    newFile: !uuid 'd096893d6cdf71f169be37befb11039bdbaa9702'
+    oldFile: null
+  /hyperf/app/Utils/Http.php:
+    newFile: !uuid 'a8234b6fa40e1abca58f0fc059c71ce6a609be24'
+    oldFile: null
+  /hyperf/app/Utils/RedisCode.php:
+    newFile: !uuid '52a461181b33f9147f83dbfc6ba61458311afb28'
+    oldFile: null
+  /hyperf/app/Utils/ResponseTrait.php:
+    newFile: !uuid '5a16d9e2fc5f737180687b8da768a9cb7011f7c5'
+    oldFile: null
+  /hyperf/app/utils:
     newFile: null
-    oldFile: !uuid 'fbd0748af27a25d9917f7305a493bc73a238290c'
-  /hyperf/app/Controller/Web:
-    newFile: !uuid 'e5d9442f52b846f8ef29f6c123d479efae125b2a'
-    oldFile: null
-  /hyperf/app/Controller/Web/IndexController.php:
-    newFile: !uuid '7ef879ad83f0be01fe09863072aa6c3e7fd5bcff'
-    oldFile: null
-  /hyperf/app/Middleware:
-    newFile: !uuid 'c76ecea52bd3790d42b0c9e64b06184322098d28'
-    oldFile: !uuid 'c7216472d5024ee16d7959c235409fabf8ba13fd'
-  /hyperf/app/Middleware/AdminCheckMiddleware.php:
-    newFile: !uuid '296bb7c280df8b993a197a01b740b07251b2dcfe'
-    oldFile: !uuid '2f74a42d1542572018078495fbecf59e3517f2bb'
-  /hyperf/config:
-    newFile: !uuid 'f5173e47812d253dd267e31c622a7eb00449e0a3'
-    oldFile: !uuid 'e9868f28524748293995e645c2f8374c753b29e1'
-  /hyperf/config/routes.php:
-    newFile: !uuid '45dde31a40c8fa70b767dd14400ed22bce6a09c8'
-    oldFile: !uuid 'b6f1c5e208267f8bc56f5a3a74afe66881f2d381'
-gitCommitId: !uuid '073ece51ce22dfaa339dda6d0ac12309ca433e94'
+    oldFile: !uuid '68b7b8deb2cd88be1bea27bc7687eb18ec410f95'
+  /hyperf/app/utils/Function.php:
+    newFile: null
+    oldFile: !uuid '8f6decf0dd68e4a22555f08da19b6c43d3f0818a'
+  /hyperf/app/utils/GlobalCode.php:
+    newFile: null
+    oldFile: !uuid '591590cb85e18da5529c4d1bb64941d442115775'
+  /hyperf/app/utils/GlobalMsg.php:
+    newFile: null
+    oldFile: !uuid 'd096893d6cdf71f169be37befb11039bdbaa9702'
+  /hyperf/app/utils/Http.php:
+    newFile: null
+    oldFile: !uuid 'a8234b6fa40e1abca58f0fc059c71ce6a609be24'
+  /hyperf/app/utils/RedisCode.php:
+    newFile: null
+    oldFile: !uuid '52a461181b33f9147f83dbfc6ba61458311afb28'
+  /hyperf/app/utils/ResponseTrait.php:
+    newFile: null
+    oldFile: !uuid '5a16d9e2fc5f737180687b8da768a9cb7011f7c5'
+gitCommitId: !uuid '319ba099172637e3acfe719e3ba65d220c8d1caf'
 renames:
-  /hyperf/app/Controller/Admin/IndexController.php: /hyperf/app/Controller/IndexController.php
-  /hyperf/app/Controller/Web/IndexController.php: /hyperf/app/Controller/IndexController.php
-revisionId: 6
+  /hyperf/app/Utils/Function.php: /hyperf/app/utils/Function.php
+  /hyperf/app/Utils/GlobalCode.php: /hyperf/app/utils/GlobalCode.php
+  /hyperf/app/Utils/GlobalMsg.php: /hyperf/app/utils/GlobalMsg.php
+  /hyperf/app/Utils/Http.php: /hyperf/app/utils/Http.php
+  /hyperf/app/Utils/RedisCode.php: /hyperf/app/utils/RedisCode.php
+  /hyperf/app/Utils/ResponseTrait.php: /hyperf/app/utils/ResponseTrait.php
+revisionId: 7
