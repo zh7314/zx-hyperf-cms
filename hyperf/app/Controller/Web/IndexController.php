@@ -10,7 +10,9 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace App\Controller;
+namespace App\Controller\Web;
+
+use App\Controller\AbstractController;
 
 class IndexController extends AbstractController
 {

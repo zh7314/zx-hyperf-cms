@@ -16,9 +16,9 @@ use App\Middleware\AdminCheckMiddleware;
 
 //Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
-Router::get('/', 'App\Controller\IndexController@index');
+Router::get('/', 'App\Controller\Web\IndexController@index');
 
-Router::get('/test', 'App\Controller\IndexController@test');
+Router::get('/test', 'App\Controller\Web\IndexController@test');
 
 //Router::addGroup();
 
@@ -28,7 +28,7 @@ Router::get('/favicon.ico', function () {
 
 Router::addGroup(
     '/admin', function () {
-    Router::get('/index', [\App\Controller\IndexController::class, 'index']);
+    Router::get('/index', [\App\Controller\Admin\IndexController::class, 'index']);
 },
     ['middleware' => [AdminCheckMiddleware::class]]
 );
