@@ -13,17 +13,20 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Controller\AbstractController;
+use App\Model\Admin;
 
 class IndexController extends AbstractController
 {
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
+//        $user = $this->request->input('user', 'Hyperf');
         $method = $this->request->getMethod();
+
+        $data = Admin::get()->toArray();
 
         return [
             'method' => $method,
-            'message' => "Hello {$user}.11111111111111",
+            'message' => $data,
         ];
     }
 
