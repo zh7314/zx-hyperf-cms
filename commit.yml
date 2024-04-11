@@ -3,60 +3,120 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid '0db1ea05ce66c04c50ef4fc3d875f3bc67c0e4f0'
-    oldFile: !uuid 'daced37f515f0b06e38ba194d659017bc1f76529'
-  /hyperf/.dockerignore:
-    newFile: !uuid '1f9e66fdf6202060f690e7d0aed8281622e12d6d'
-    oldFile: null
-  /hyperf/.env:
-    newFile: !uuid 'abda006b765d6613afedc0966f7b9228c4dff9e5'
-    oldFile: !uuid 'd56353d184f996c9a71a6d9452360b65c77d7a64'
-  /hyperf/.env.example:
-    newFile: !uuid '68795836efea2a08755beb65182c5de8fefdd7d5'
-    oldFile: !uuid '61e24d9e1984ba4bda0213b3453a61b2a06f94b0'
-  /hyperf/.gitignore:
-    newFile: !uuid 'c69291be74c2cc3326735e8ce20a5e03808092f1'
-    oldFile: !uuid 'cf7270dcc3a1e2bc28c98e8e6d4534a75440201b'
-  /hyperf/.gitlab-ci.yml:
-    newFile: !uuid 'a5fccae0fc42990ed52dbceec59995f77d85c570'
-    oldFile: null
-  /hyperf/.php-cs-fixer.php:
-    newFile: !uuid '204686a051182858f42e8a88706cfb479f32d6d1'
-    oldFile: null
-  /hyperf/.phpstorm.meta.php:
-    newFile: !uuid 'c8b63000880b889b4f273267b67c7111ced1518a'
-    oldFile: null
-  /hyperf/.watcher.php:
-    newFile: !uuid '132e9d0422ba477cb8e2ee29c0ccc3c394d50080'
-    oldFile: null
-  /hyperf/Dockerfile:
-    newFile: !uuid '49056149d98e8d99abe9afc4362fa15f185dfbac'
-    oldFile: !uuid 'f4636ab280a773787eab37624dc3a3f767ef1a76'
-  /hyperf/LICENSE:
-    newFile: !uuid 'c35d3f5a85fafa9b1cccd4387a26ba93fa547588'
-    oldFile: !uuid '67dffa3609be4fbcfd39285866baa6483aee2770'
-  /hyperf/README.md:
-    newFile: !uuid '7d7a10d142ab69213d7ab73f4ad6ab30c87071af'
-    oldFile: !uuid '43f97b46b8e16485fdf1bfc1ede2b4614989aa09'
-  /hyperf/composer.json:
-    newFile: !uuid '84fc9148c35ecd84f0964bbd47c9bc6c0e297d66'
-    oldFile: null
-  /hyperf/composer.lock:
-    newFile: !uuid '3b8cfdef25b8e9bcce4966f66cab381a62b1b7ab'
-    oldFile: null
-  /hyperf/deploy.test.yml:
-    newFile: !uuid 'b5b692b58267e6fa8edd3462a9fbb91fb56dd6b3'
-    oldFile: null
-  /hyperf/docker-compose.yml:
-    newFile: !uuid '1828ececb8c75695de9cf6bf88c900fb3bcb38c2'
-    oldFile: !uuid '2264b85dc35bb27fcfac210c2e547c1409eb2a26'
-  /hyperf/phpstan.neon.dist:
-    newFile: !uuid '8bc5f33f2e2b5d9c92226fe1b8bf7fb37de72c17'
-    oldFile: null
-  /hyperf/phpunit.xml.dist:
-    newFile: !uuid 'caaa1d25c3a83e82d5b87fcc33d293dc3736b211'
-    oldFile: null
-gitCommitId: !uuid 'e2ea044164f226e5c05e766e1523582ab15c74d3'
+    newFile: !uuid 'c0a45238d40788716b481bd9253d181c8ae9949d'
+    oldFile: !uuid '0db1ea05ce66c04c50ef4fc3d875f3bc67c0e4f0'
+  /hyperf/.air.toml:
+    newFile: null
+    oldFile: !uuid '7875a2dfddc453d118c464b8e15e8319b7b3ca01'
+  /hyperf/README_zh.md:
+    newFile: null
+    oldFile: !uuid '19cbd2495e57caaa0d2852185d65b364e74f1d0d'
+  /hyperf/bootstrap:
+    newFile: null
+    oldFile: !uuid '1a97749148d1f9b7f8e4ae8408b82bd30ee38410'
+  /hyperf/bootstrap/app.go:
+    newFile: null
+    oldFile: !uuid '7532a9438ecb7c4da98369c5b47f4b78ff104c89'
+  /hyperf/database:
+    newFile: null
+    oldFile: !uuid '80b2630fb8a24586663279a4377949225d033cf7'
+  /hyperf/database/migrations:
+    newFile: null
+    oldFile: !uuid '82e3a754b6a0fcb238b03c0e47d05219fbf9cf89'
+  /hyperf/database/migrations/.gitignore:
+    newFile: null
+    oldFile: !uuid 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391'
+  /hyperf/database/seeders:
+    newFile: null
+    oldFile: !uuid 'b9349f22b00ab40d613c4716435d326b527368b4'
+  /hyperf/database/seeders/database_seeder.go:
+    newFile: null
+    oldFile: !uuid '45b8edf4897901e6cd4ee9cb65b9f17b40e1871d'
+  /hyperf/doc:
+    newFile: null
+    oldFile: !uuid '607f99d0b646368bde2a00ab83454e9997428984'
+  /hyperf/doc/sql_bak:
+    newFile: null
+    oldFile: !uuid '23be614b776dfd609e1fc9e0dd12f17a0c9449b4'
+  /hyperf/doc/sql_bak/web-2023-07-29.sql:
+    newFile: null
+    oldFile: !uuid 'e1deddd161675cabb763b0e5cd09428076bf841f'
+  /hyperf/go.mod:
+    newFile: null
+    oldFile: !uuid 'a2e3265ae33fda5a28ca6eaf40d793fe53cfc2be'
+  /hyperf/go.sum:
+    newFile: null
+    oldFile: !uuid '5555dff906e24ebc85b06c0f3a7d1816827ee30b'
+  /hyperf/main.go:
+    newFile: null
+    oldFile: !uuid '93c5a015b264a1e51d8085366d012b2b04f59aa2'
+  /hyperf/public:
+    newFile: null
+    oldFile: !uuid '78ea226843fd26bcb5b2663317cd2872c37e6308'
+  /hyperf/public/upload:
+    newFile: null
+    oldFile: !uuid '0fcdfd2a18c4acbbc8b52970aa034b1bc3009f83'
+  /hyperf/public/upload/file:
+    newFile: null
+    oldFile: !uuid '82e3a754b6a0fcb238b03c0e47d05219fbf9cf89'
+  /hyperf/public/upload/file/.gitignore:
+    newFile: null
+    oldFile: !uuid 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391'
+  /hyperf/public/upload/image:
+    newFile: null
+    oldFile: !uuid '82e3a754b6a0fcb238b03c0e47d05219fbf9cf89'
+  /hyperf/public/upload/image/.gitignore:
+    newFile: null
+    oldFile: !uuid 'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391'
+  /hyperf/resources:
+    newFile: null
+    oldFile: !uuid 'caa4b6fae72d8df4c65320b2f48f2991b2acb761'
+  /hyperf/resources/views:
+    newFile: null
+    oldFile: !uuid '6d328779e90900979fd61818ef8dcea27d58f258'
+  /hyperf/resources/views/welcome.tmpl:
+    newFile: null
+    oldFile: !uuid '3c2fc7d01a05be4d20a680777296fbef566a0541'
+  /hyperf/routes:
+    newFile: null
+    oldFile: !uuid 'b98d9595865d29de008709ca20faf040cc0569ea'
+  /hyperf/routes/api.go:
+    newFile: null
+    oldFile: !uuid '4593a5f3fbce63d2b792361c65f55a67837800e2'
+  /hyperf/routes/grpc.go:
+    newFile: null
+    oldFile: !uuid '31fe5871ef5e0f6121e8c1abcec345e53d92a3df'
+  /hyperf/routes/web.go:
+    newFile: null
+    oldFile: !uuid '937dfdb673a86e3ef5e1c4fb02bd7aa2e9930886'
+  /hyperf/storage:
+    newFile: null
+    oldFile: !uuid 'b03695b8947b5638f01e67665d025219f29bba14'
+  /hyperf/storage/logs:
+    newFile: null
+    oldFile: !uuid '71d1f1aa02e6ecb4f13e1cc36cd95abb538f0d4a'
+  /hyperf/storage/logs/.gitignore:
+    newFile: null
+    oldFile: !uuid 'a3a0c8b5f48c0260a4cb43aa577f9b18896ee280'
+  /hyperf/storage/temp:
+    newFile: null
+    oldFile: !uuid '71d1f1aa02e6ecb4f13e1cc36cd95abb538f0d4a'
+  /hyperf/storage/temp/.gitignore:
+    newFile: null
+    oldFile: !uuid 'a3a0c8b5f48c0260a4cb43aa577f9b18896ee280'
+  /hyperf/tests:
+    newFile: null
+    oldFile: !uuid '48ebab791c4133ee41264c3a3565188a7ada4afc'
+  /hyperf/tests/feature:
+    newFile: null
+    oldFile: !uuid 'b56d5ec0b6a4cb9dfa96d9a4adddfe276d2eca54'
+  /hyperf/tests/feature/example_test.go:
+    newFile: null
+    oldFile: !uuid 'f85ed9ebefb20d8d12592d60d0bd7084d5a5528b'
+  /hyperf/tests/test_case.go:
+    newFile: null
+    oldFile: !uuid '362e12221d9295b2c2645b29a31695141031dfeb'
+gitCommitId: !uuid '7f7304ebae7af38af8d8cc2a495e36b8a68c9c0a'
 renames: {
   }
-revisionId: 4
+revisionId: 5
