@@ -26,9 +26,37 @@ Router::get('/favicon.ico', function () {
     return '';
 });
 
-Router::addGroup(
-    '/admin', function () {
-    Router::get('/index', [\App\Controller\Admin\IndexController::class, 'index']);
-},
-    ['middleware' => [AdminCheckMiddleware::class]]
-);
+Router::addGroup('/admin', function () {
+
+    Router::get('/login', [\App\Controller\Admin\IndexController::class, 'login']);
+    Router::get('/getCaptcha', [\App\Controller\Admin\IndexController::class, 'getCaptcha']);
+    Router::get('/uploadPic', [\App\Controller\Admin\IndexController::class, 'uploadPic']);
+    Router::get('/uploadFile', [\App\Controller\Admin\IndexController::class, 'uploadFile']);
+});
+
+Router::addGroup('/admin', function () {
+
+    Router::get('/getMenu', [\App\Controller\Admin\IndexController::class, 'getMenu']);
+    Router::get('/getInfo', [\App\Controller\Admin\IndexController::class, 'getInfo']);
+    Router::get('/logout', [\App\Controller\Admin\IndexController::class, 'logout']);
+    Router::get('/getVersion', [\App\Controller\Admin\IndexController::class, 'getVersion']);
+    Router::get('/changePwd', [\App\Controller\Admin\IndexController::class, 'changePwd']);
+
+    Router::get('/getGroupTree', [\App\Controller\Admin\IndexController::class, 'getGroupTree']);
+    Router::get('/getMenuTree', [\App\Controller\Admin\IndexController::class, 'getMenuTree']);
+    Router::get('/getDownloadCateTree', [\App\Controller\Admin\IndexController::class, 'getDownloadCateTree']);
+    Router::get('/getNewsCateTree', [\App\Controller\Admin\IndexController::class, 'getNewsCateTree']);
+    Router::get('/getProductCateTree', [\App\Controller\Admin\IndexController::class, 'getProductCateTree']);
+    Router::get('/getVideoCateTree', [\App\Controller\Admin\IndexController::class, 'getVideoCateTree']);
+    Router::get('/getBannerCateTree', [\App\Controller\Admin\IndexController::class, 'getBannerCateTree']);
+
+    Router::addGroup('/admin', function () {
+        Router::get('/getList', [\App\Controller\Admin\AdminController::class, 'getList']);
+        Router::get('/getAll', [\App\Controller\Admin\AdminController::class, 'getAll']);
+        Router::get('/getOne', [\App\Controller\Admin\AdminController::class, 'getOne']);
+        Router::get('/add', [\App\Controller\Admin\AdminController::class, 'add']);
+        Router::get('/save', [\App\Controller\Admin\AdminController::class, 'save']);
+        Router::get('/delete', [\App\Controller\Admin\AdminController::class, 'delete']);
+    });
+
+}, ['middleware' => [AdminCheckMiddleware::class]]);
