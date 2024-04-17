@@ -33,12 +33,12 @@ class IndexController extends AbstractController
         }
     }
 
-    public function test()
+    public function test(RequestInterface $request)
     {
         try {
 
-            $user = $this->request->input('user', 'Hyperf');
-            $method = $this->request->getMethod();
+            $user = $request->input('user', 'Hyperf');
+            $method = $request->getMethod();
 
             $data = [
                 'method' => $method,
