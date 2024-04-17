@@ -10,6 +10,8 @@ use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
 use Throwable;
 
+use function Hyperf\Support\env;
+
 trait ResponseTrait
 {
     #[Inject]
