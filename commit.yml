@@ -3,36 +3,27 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid 'aa1d24278730097e63f6f099a53917e7431af149'
-    oldFile: !uuid '10fe1988b16b70752cb80094fc99c9a368b19c1c'
+    newFile: !uuid 'cccefe40c5812ad8aa65f0a0969591386268dee1'
+    oldFile: !uuid 'aa1d24278730097e63f6f099a53917e7431af149'
+  /hyperf/.env:
+    newFile: !uuid 'eb655fa7138fd48d6ae58f531e8fb6692e277741'
+    oldFile: !uuid 'd955cd17ac1983af6e992d034bbf1d4b8b8faab0'
   /hyperf/app:
-    newFile: !uuid '05fa1df0222c038e0d8a7e200b895111f2880cce'
-    oldFile: !uuid '39ec5afcc1171b29f6a5442a60f1fc115c1caccc'
-  /hyperf/app/Controller:
-    newFile: !uuid '0afea09c0e55fc646f044556ed6b1b6bbae29665'
-    oldFile: !uuid '335c8898a9af724732fe9f7c88a4cb4ab7bc38e9'
-  /hyperf/app/Controller/Admin:
-    newFile: !uuid '102772476adcab990c48c543ed94fcd7d9901656'
-    oldFile: !uuid 'ac5da6ac08582a1e1b54d3c66e7e2918e8e7f15e'
-  /hyperf/app/Controller/Admin/AdminController.php:
-    newFile: !uuid '9096780c02c99410315e71751569274959708fa9'
-    oldFile: !uuid 'fd86003ee3c60a8a90f3633c52608aa50bf612f6'
-  /hyperf/app/Controller/Web:
-    newFile: !uuid 'a799f4428984aa51f5419b74757fdb0fa9f72d10'
-    oldFile: !uuid '473165da71412d9e61cc265ddd285e190ffddee1'
-  /hyperf/app/Controller/Web/IndexController.php:
-    newFile: !uuid '572df145a00af710ce33544c9a38e6460786af64'
-    oldFile: !uuid '19eb0d96e4df3388f76b1a412849d724bc053aa9'
-  /hyperf/app/Service:
-    newFile: !uuid 'f82871ac92b94ef1276f629fb692c02a04a4e990'
-    oldFile: !uuid '8fcd22638c6ec45c07d81f5618fa2329b35f0ba0'
-  /hyperf/app/Service/Admin:
-    newFile: !uuid 'f62b7dfa8638690f8d1adcb35d79738fed59f54a'
-    oldFile: !uuid 'cf8df1d45f3884e2788a61a65ddbd1173eac8e84'
-  /hyperf/app/Service/Admin/AdminService.php:
-    newFile: !uuid '90258077ad9b0afa4666fd1a581ee7692d6b8e10'
-    oldFile: null
-gitCommitId: !uuid 'c5c3a132162be4eb07fcf5e74b3c8e38d9803150'
+    newFile: !uuid 'cbea5dc2f1797f2106dedd67c83a824e4f09a42c'
+    oldFile: !uuid '05fa1df0222c038e0d8a7e200b895111f2880cce'
+  /hyperf/app/Utils:
+    newFile: !uuid '0ac27feb703bcb7f13ab16f643c50cd8ed6dfb56'
+    oldFile: !uuid '5aed003ee662bec841586bc8cd43cfaabd360969'
+  /hyperf/app/Utils/ResponseTrait.php:
+    newFile: !uuid 'c54af89978d8f70e058103b0f1d82e825521aba6'
+    oldFile: !uuid 'a00fc4e3f3b6a369cb485109b268951f87c7067b'
+  /hyperf/composer.json:
+    newFile: !uuid '2505fa07c4829b77c23eda956f3bed80773956fe'
+    oldFile: !uuid '84fc9148c35ecd84f0964bbd47c9bc6c0e297d66'
+  /hyperf/composer.lock:
+    newFile: !uuid 'c9c2a2aad0c6e5268893791736c3afc696ea325e'
+    oldFile: !uuid '3b8cfdef25b8e9bcce4966f66cab381a62b1b7ab'
+gitCommitId: !uuid '0d14f6d7ba5b58f8264ed86ca322df245715ad66'
 renames: {
   }
-revisionId: 11
+revisionId: 12
