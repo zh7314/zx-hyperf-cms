@@ -1,40 +1,54 @@
 <?php
 
 declare(strict_types=1);
-/**
- * This file is part of Hyperf.
- *
- * @link     https://www.hyperf.io
- * @document https://hyperf.wiki
- * @contact  group@hyperf.io
- * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
- */
 
 namespace App\Controller\Web;
 
 use App\Controller\AbstractController;
+use App\Utils\ResponseTrait;
+use Hyperf\HttpServer\Contract\RequestInterface;
+use Hyperf\HttpServer\Contract\ResponseInterface;
+use Throwable;
 
 class IndexController extends AbstractController
 {
+    use ResponseTrait;
+
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
+        try {
+            $user = $this->request->input('user', 'Hyperf');
+            $method = $this->request->getMethod();
 
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+            $data = [
+                'method' => $method,
+                'message' => "Hello {$user}",
+                'random' => getRandom()
+            ];
+
+
+            return $this->success($data);
+        } catch (Throwable $e) {
+            return $this->fail($e);
+        }
     }
 
     public function test()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
+        try {
 
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}",
-        ];
+            $user = $this->request->input('user', 'Hyperf');
+            $method = $this->request->getMethod();
+
+            $data = [
+                'method' => $method,
+                'message' => "Hello {$user}",
+                'random' => getRandom()
+            ];
+
+            return $this->success($data);
+        } catch (Throwable $e) {
+            return $this->fail($e);
+        }
     }
 }

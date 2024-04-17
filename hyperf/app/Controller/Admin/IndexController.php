@@ -10,6 +10,7 @@ use App\Service\Admin\CommonService;
 use App\Service\Admin\LoginService;
 use App\Utils\ResponseTrait;
 use Exception;
+use Hyperf\DbConnection\Db;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
 use Throwable;
@@ -31,7 +32,7 @@ class IndexController extends AbstractController
 
     public function login(RequestInterface $request, ResponseInterface $response)
     {
-        DB::beginTransaction();
+        Db::beginTransaction();
         try {
 
             $name = parameterCheck($request->username, 'string', '');
@@ -40,10 +41,10 @@ class IndexController extends AbstractController
             $captchaKey = parameterCheck($request->captchaKey, 'string', '');
 
             $data = LoginService::login($name, $password, $code, $captchaKey);
-            DB::commit();
+            Db::commit();
             return $this->success($data, '登录成功');
         } catch (Throwable $e) {
-            DB::rollBack();
+            Db::rollBack();
             return $this->fail($e);
         }
     }
@@ -142,7 +143,7 @@ class IndexController extends AbstractController
     public function changePwd(RequestInterface $request, ResponseInterface $response)
     {
 
-        DB::beginTransaction();
+        Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($request->input('admin_id'), 'int', 0);
@@ -153,10 +154,10 @@ class IndexController extends AbstractController
 
             $data = LoginService::changePwd($where);
 
-            DB::commit();
+            Db::commit();
             return $this->success($data);
         } catch (Throwable $e) {
-            DB::rollBack();
+            Db::rollBack();
             return $this->fail($e);
         }
     }

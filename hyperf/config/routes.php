@@ -14,11 +14,9 @@ declare(strict_types=1);
 use Hyperf\HttpServer\Router\Router;
 use App\Middleware\AdminCheckMiddleware;
 
-//Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
-Router::get('/', 'App\Controller\Web\IndexController@index');
-
-Router::get('/test', 'App\Controller\Web\IndexController@test');
+Router::get('/', [\App\Controller\Web\IndexController::class, 'index']);
+Router::get('/test', [\App\Controller\Web\IndexController::class, 'test']);
 
 //Router::addGroup();
 
