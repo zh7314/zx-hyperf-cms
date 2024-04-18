@@ -3,27 +3,33 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid 'cccefe40c5812ad8aa65f0a0969591386268dee1'
-    oldFile: !uuid 'aa1d24278730097e63f6f099a53917e7431af149'
-  /hyperf/.env:
-    newFile: !uuid 'eb655fa7138fd48d6ae58f531e8fb6692e277741'
-    oldFile: !uuid 'd955cd17ac1983af6e992d034bbf1d4b8b8faab0'
+    newFile: !uuid '42a3821fb1444d67c52b3936863629741306902e'
+    oldFile: !uuid 'cccefe40c5812ad8aa65f0a0969591386268dee1'
   /hyperf/app:
-    newFile: !uuid 'cbea5dc2f1797f2106dedd67c83a824e4f09a42c'
-    oldFile: !uuid '05fa1df0222c038e0d8a7e200b895111f2880cce'
+    newFile: !uuid 'ba7b002ac678be39059ec0a753a7daf340da8cc3'
+    oldFile: !uuid 'cbea5dc2f1797f2106dedd67c83a824e4f09a42c'
+  /hyperf/app/Middleware:
+    newFile: !uuid '7763e99939dfe238b65b9f86eff390a53e353349'
+    oldFile: !uuid 'c7216472d5024ee16d7959c235409fabf8ba13fd'
+  /hyperf/app/Middleware/AdminCheckMiddleware.php:
+    newFile: !uuid '4d07b288f15293aa441d3a60d1a688fa05e4608f'
+    oldFile: !uuid '2f74a42d1542572018078495fbecf59e3517f2bb'
+  /hyperf/app/Middleware/AdminLogMiddleware.php:
+    newFile: !uuid 'a2dbcf2bd6c976c57ec4a1b7f2a517000f011cf2'
+    oldFile: null
+  /hyperf/app/Middleware/ApiLogMiddleware.php:
+    newFile: !uuid '349aaa0882848a609be0e336f0ce351bad0a5eba'
+    oldFile: null
   /hyperf/app/Utils:
-    newFile: !uuid '0ac27feb703bcb7f13ab16f643c50cd8ed6dfb56'
-    oldFile: !uuid '5aed003ee662bec841586bc8cd43cfaabd360969'
+    newFile: !uuid 'b11e1085090b702147d2aa1ae301488315aac152'
+    oldFile: !uuid '0ac27feb703bcb7f13ab16f643c50cd8ed6dfb56'
+  /hyperf/app/Utils/Function.php:
+    newFile: !uuid '75ebdc084b249ff1e3d70c87db9cf4e855f95f40'
+    oldFile: !uuid '8f6decf0dd68e4a22555f08da19b6c43d3f0818a'
   /hyperf/app/Utils/ResponseTrait.php:
-    newFile: !uuid 'c54af89978d8f70e058103b0f1d82e825521aba6'
-    oldFile: !uuid 'a00fc4e3f3b6a369cb485109b268951f87c7067b'
-  /hyperf/composer.json:
-    newFile: !uuid '2505fa07c4829b77c23eda956f3bed80773956fe'
-    oldFile: !uuid '84fc9148c35ecd84f0964bbd47c9bc6c0e297d66'
-  /hyperf/composer.lock:
-    newFile: !uuid 'c9c2a2aad0c6e5268893791736c3afc696ea325e'
-    oldFile: !uuid '3b8cfdef25b8e9bcce4966f66cab381a62b1b7ab'
-gitCommitId: !uuid '0d14f6d7ba5b58f8264ed86ca322df245715ad66'
+    newFile: !uuid 'cea174f0b5510b7bbe6c9cc5e3407cdc23ae3c00'
+    oldFile: !uuid 'c54af89978d8f70e058103b0f1d82e825521aba6'
+gitCommitId: !uuid '14e77a72098e85c02b9b3c4ecc3dbd2019b673ff'
 renames: {
   }
-revisionId: 12
+revisionId: 13
