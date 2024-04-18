@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
+use App\Model\Admin;
+use App\Service\Admin\CommonService;
+use App\Utils\GlobalCode;
+use App\Utils\ResponseTrait;
+use Exception;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface as HttpResponse;
 use Psr\Container\ContainerInterface;
@@ -11,9 +16,12 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Throwable;
 
 class AdminCheckMiddleware implements MiddlewareInterface
 {
+    use ResponseTrait;
+
     protected ContainerInterface $container;
 
     protected RequestInterface $request;
@@ -29,19 +37,38 @@ class AdminCheckMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        // 根据具体业务判断逻辑走向，这里假设用户携带的token有效
-        $isValidToken = true;
-        if ($isValidToken) {
-            return $handler->handle($request);
-        }
+//        try {
+//            $token = $this->request->header(GlobalCode::API_TOKEN,'');
+//            if (empty($token)) {
+//                //兼容文件下载文件验证 token
+//                $token = $this->request->input(GlobalCode::API_TOKEN);
+//                if (empty($token)) {
+//                    throw new Exception('token为空，请重新登录');
+//                }
+//            }
+//            $admin = Admin::where('token', $token)->first();
+//            if ($admin == null) {
+//                throw new Exception('token不存在');
+//            }
+//            if ((int)time() > ((int)strtotime($admin->token_time) + (int)GlobalCode::TOKEN_TIME)) {
+//                throw new Exception('token过期，请重新登录');
+//            }
+//
+//            $request['admin_id'] = $admin->id;
+//            $request['token'] = $token;
+//
+//            $request_url = $request->path();
+//            try {
+//                //权限验证
+//                CommonService::permissionCheck($admin->id, $request_url);
+//            } catch (Exception $e) {
+//                return $this->fail($e);
+//            }
+//
+//        } catch (Throwable $e) {
+//            return $this->grant($e);
+//        }
 
-        return $this->response->json(
-            [
-                'code' => -1,
-                'data' => [
-                    'error' => '中间件验证token无效，阻止继续向下执行',
-                ],
-            ]
-        );
+        return $handler->handle($request);
     }
 }

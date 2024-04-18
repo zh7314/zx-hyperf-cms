@@ -1,10 +1,15 @@
 <?php
+//use Hyperf\HttpServer\Contract\ResponseInterface;
 
-/**
- * curl request
- */
+use Hyperf\HttpServer\Response;
 
-use Illuminate\Http\JsonResponse;
+if (!function_exists('returnJson')) {
+
+    function returnJson(mixed $data = null, int $status = 200, array $headers = ['Content-Type' => 'application/json'], int $options = JSON_UNESCAPED_UNICODE)
+    {
+        return (new Response())->json();
+    }
+}
 
 if (!function_exists('https_request')) {
 
@@ -1051,3 +1056,4 @@ if (!function_exists('mb_padding_str')) {
     }
 
 }
+
