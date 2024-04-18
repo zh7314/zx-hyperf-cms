@@ -26,35 +26,35 @@ Router::get('/favicon.ico', function () {
 
 Router::addGroup('/admin', function () {
 
-    Router::get('/login', [\App\Controller\Admin\IndexController::class, 'login']);
-    Router::get('/getCaptcha', [\App\Controller\Admin\IndexController::class, 'getCaptcha']);
-    Router::get('/uploadPic', [\App\Controller\Admin\IndexController::class, 'uploadPic']);
-    Router::get('/uploadFile', [\App\Controller\Admin\IndexController::class, 'uploadFile']);
+    Router::post('/login', [\App\Controller\Admin\IndexController::class, 'login']);
+    Router::post('/getCaptcha', [\App\Controller\Admin\IndexController::class, 'getCaptcha']);
+    Router::post('/uploadPic', [\App\Controller\Admin\IndexController::class, 'uploadPic']);
+    Router::post('/uploadFile', [\App\Controller\Admin\IndexController::class, 'uploadFile']);
 });
 
 Router::addGroup('/admin', function () {
 
-    Router::get('/getMenu', [\App\Controller\Admin\IndexController::class, 'getMenu']);
-    Router::get('/getInfo', [\App\Controller\Admin\IndexController::class, 'getInfo']);
-    Router::get('/logout', [\App\Controller\Admin\IndexController::class, 'logout']);
-    Router::get('/getVersion', [\App\Controller\Admin\IndexController::class, 'getVersion']);
-    Router::get('/changePwd', [\App\Controller\Admin\IndexController::class, 'changePwd']);
+    Router::post('/getMenu', [\App\Controller\Admin\IndexController::class, 'getMenu']);
+    Router::post('/getInfo', [\App\Controller\Admin\IndexController::class, 'getInfo']);
+    Router::post('/logout', [\App\Controller\Admin\IndexController::class, 'logout']);
+    Router::post('/getVersion', [\App\Controller\Admin\IndexController::class, 'getVersion']);
+    Router::post('/changePwd', [\App\Controller\Admin\IndexController::class, 'changePwd']);
 
-    Router::get('/getGroupTree', [\App\Controller\Admin\IndexController::class, 'getGroupTree']);
-    Router::get('/getMenuTree', [\App\Controller\Admin\IndexController::class, 'getMenuTree']);
-    Router::get('/getDownloadCateTree', [\App\Controller\Admin\IndexController::class, 'getDownloadCateTree']);
-    Router::get('/getNewsCateTree', [\App\Controller\Admin\IndexController::class, 'getNewsCateTree']);
-    Router::get('/getProductCateTree', [\App\Controller\Admin\IndexController::class, 'getProductCateTree']);
-    Router::get('/getVideoCateTree', [\App\Controller\Admin\IndexController::class, 'getVideoCateTree']);
-    Router::get('/getBannerCateTree', [\App\Controller\Admin\IndexController::class, 'getBannerCateTree']);
+    Router::post('/getGroupTree', [\App\Controller\Admin\IndexController::class, 'getGroupTree']);
+    Router::post('/getMenuTree', [\App\Controller\Admin\IndexController::class, 'getMenuTree']);
+    Router::post('/getDownloadCateTree', [\App\Controller\Admin\IndexController::class, 'getDownloadCateTree']);
+    Router::post('/getNewsCateTree', [\App\Controller\Admin\IndexController::class, 'getNewsCateTree']);
+    Router::post('/getProductCateTree', [\App\Controller\Admin\IndexController::class, 'getProductCateTree']);
+    Router::post('/getVideoCateTree', [\App\Controller\Admin\IndexController::class, 'getVideoCateTree']);
+    Router::post('/getBannerCateTree', [\App\Controller\Admin\IndexController::class, 'getBannerCateTree']);
 
     Router::addGroup('/admin', function () {
-        Router::get('/getList', [\App\Controller\Admin\AdminController::class, 'getList']);
-        Router::get('/getAll', [\App\Controller\Admin\AdminController::class, 'getAll']);
-        Router::get('/getOne', [\App\Controller\Admin\AdminController::class, 'getOne']);
-        Router::get('/add', [\App\Controller\Admin\AdminController::class, 'add']);
-        Router::get('/save', [\App\Controller\Admin\AdminController::class, 'save']);
-        Router::get('/delete', [\App\Controller\Admin\AdminController::class, 'delete']);
+        Router::post('/getList', [\App\Controller\Admin\AdminController::class, 'getList']);
+        Router::post('/getAll', [\App\Controller\Admin\AdminController::class, 'getAll']);
+        Router::post('/getOne', [\App\Controller\Admin\AdminController::class, 'getOne']);
+        Router::post('/add', [\App\Controller\Admin\AdminController::class, 'add']);
+        Router::post('/save', [\App\Controller\Admin\AdminController::class, 'save']);
+        Router::post('/delete', [\App\Controller\Admin\AdminController::class, 'delete']);
     });
 
 }, ['middleware' => [AdminCheckMiddleware::class]]);
