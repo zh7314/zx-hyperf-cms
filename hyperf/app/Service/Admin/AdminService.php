@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Service\Admin;
 
@@ -14,56 +15,56 @@ class AdminService
     {
         $admin = new Admin();
 
-        if (!empty($where['admin_group_ids'])) {
+                    if (!empty($where['admin_group_ids'])) {
             $admin = $admin->where('admin_group_ids', $where['admin_group_ids']);
-        }
-        if (!empty($where['avatar'])) {
+            }
+            if (!empty($where['avatar'])) {
             $admin = $admin->where('avatar', $where['avatar']);
-        }
-        if (!empty($where['email'])) {
+            }
+            if (!empty($where['email'])) {
             $admin = $admin->where('email', $where['email']);
-        }
-        if (!empty($where['is_admin'])) {
+            }
+            if (!empty($where['is_admin'])) {
             $admin = $admin->where('is_admin', $where['is_admin']);
-        }
-        if (!empty($where['login_ip'])) {
+            }
+            if (!empty($where['login_ip'])) {
             $admin = $admin->where('login_ip', $where['login_ip']);
-        }
-        if (!empty($where['mobile'])) {
+            }
+            if (!empty($where['mobile'])) {
             $admin = $admin->where('mobile', $where['mobile']);
-        }
-        if (!empty($where['name'])) {
+            }
+            if (!empty($where['name'])) {
             $admin = $admin->where('name', $where['name']);
-        }
-        if (!empty($where['password'])) {
+            }
+            if (!empty($where['password'])) {
             $admin = $admin->where('password', $where['password']);
-        }
-        if (!empty($where['real_name'])) {
+            }
+            if (!empty($where['real_name'])) {
             $admin = $admin->where('real_name', $where['real_name']);
-        }
-        if (!empty($where['salt'])) {
+            }
+            if (!empty($where['salt'])) {
             $admin = $admin->where('salt', $where['salt']);
-        }
-        if (!empty($where['sex'])) {
+            }
+            if (!empty($where['sex'])) {
             $admin = $admin->where('sex', $where['sex']);
-        }
-        if (!empty($where['sort'])) {
+            }
+            if (!empty($where['sort'])) {
             $admin = $admin->where('sort', $where['sort']);
-        }
-        if (!empty($where['status'])) {
+            }
+            if (!empty($where['status'])) {
             $admin = $admin->where('status', $where['status']);
-        }
-        if (!empty($where['token'])) {
+            }
+            if (!empty($where['token'])) {
             $admin = $admin->where('token', $where['token']);
-        }
-        if (!empty($where['token_time'])) {
+            }
+            if (!empty($where['token_time'])) {
             $admin = $admin->where('token_time', $where['token_time']);
-        }
+            }
 
         $count = $admin->count();
 
-        if ($page > 0 && $pageSize > 0) {
-            $admin = $admin->forPage($page, $pageSize);
+        if ($page > 0 && $pageSize >0) {
+           $admin = $admin->forPage($page, $pageSize);
         }
 
         $list = $admin->orderBy('id', 'desc')->get()->toArray();
@@ -73,129 +74,129 @@ class AdminService
 
     public static function getAll(array $where = [])
     {
-        $admin = new Admin();
+            $admin = new Admin();
 
-        if (!empty($where['admin_group_ids'])) {
+                        if (!empty($where['admin_group_ids'])) {
             $admin = $admin->where('admin_group_ids', $where['admin_group_ids']);
-        }
-        if (!empty($where['avatar'])) {
+            }
+            if (!empty($where['avatar'])) {
             $admin = $admin->where('avatar', $where['avatar']);
-        }
-        if (!empty($where['email'])) {
+            }
+            if (!empty($where['email'])) {
             $admin = $admin->where('email', $where['email']);
-        }
-        if (!empty($where['is_admin'])) {
+            }
+            if (!empty($where['is_admin'])) {
             $admin = $admin->where('is_admin', $where['is_admin']);
-        }
-        if (!empty($where['login_ip'])) {
+            }
+            if (!empty($where['login_ip'])) {
             $admin = $admin->where('login_ip', $where['login_ip']);
-        }
-        if (!empty($where['mobile'])) {
+            }
+            if (!empty($where['mobile'])) {
             $admin = $admin->where('mobile', $where['mobile']);
-        }
-        if (!empty($where['name'])) {
+            }
+            if (!empty($where['name'])) {
             $admin = $admin->where('name', $where['name']);
-        }
-        if (!empty($where['password'])) {
+            }
+            if (!empty($where['password'])) {
             $admin = $admin->where('password', $where['password']);
-        }
-        if (!empty($where['real_name'])) {
+            }
+            if (!empty($where['real_name'])) {
             $admin = $admin->where('real_name', $where['real_name']);
-        }
-        if (!empty($where['salt'])) {
+            }
+            if (!empty($where['salt'])) {
             $admin = $admin->where('salt', $where['salt']);
-        }
-        if (!empty($where['sex'])) {
+            }
+            if (!empty($where['sex'])) {
             $admin = $admin->where('sex', $where['sex']);
-        }
-        if (!empty($where['sort'])) {
+            }
+            if (!empty($where['sort'])) {
             $admin = $admin->where('sort', $where['sort']);
-        }
-        if (!empty($where['status'])) {
+            }
+            if (!empty($where['status'])) {
             $admin = $admin->where('status', $where['status']);
-        }
-        if (!empty($where['token'])) {
+            }
+            if (!empty($where['token'])) {
             $admin = $admin->where('token', $where['token']);
-        }
-        if (!empty($where['token_time'])) {
+            }
+            if (!empty($where['token_time'])) {
             $admin = $admin->where('token_time', $where['token_time']);
-        }
+            }
 
-        return $admin->orderBy('id', 'desc')->get()->toArray();
+            return $admin->orderBy('id', 'desc')->get()->toArray();
     }
 
     public static function getOne(int $id = 0)
     {
-        $admin = Admin::where('id', $id)->first();
-        if ($admin == null) {
-            throw new Exception(GlobalMsg::GET_HAS_NO);
-        }
-        return $admin;
+             $admin = Admin::where('id', $id)->first();
+             if ($admin == null) {
+                 throw new Exception(GlobalMsg::GET_HAS_NO);
+             }
+             return $admin;
     }
 
     public static function add(array $where = [])
     {
 
-        $admin = new Admin();
-        if (!empty($where['id'])) {
-            throw new Exception(GlobalMsg::ADD_ID);
-        }
-        isset($where['admin_group_ids']) && $admin->admin_group_ids = $where['admin_group_ids'];
-        isset($where['avatar']) && $admin->avatar = $where['avatar'];
-        isset($where['email']) && $admin->email = $where['email'];
-        isset($where['is_admin']) && $admin->is_admin = $where['is_admin'];
-        isset($where['login_ip']) && $admin->login_ip = $where['login_ip'];
-        isset($where['mobile']) && $admin->mobile = $where['mobile'];
-        isset($where['name']) && $admin->name = $where['name'];
-        isset($where['password']) && $admin->password = $where['password'];
-        isset($where['real_name']) && $admin->real_name = $where['real_name'];
-        isset($where['salt']) && $admin->salt = $where['salt'];
-        isset($where['sex']) && $admin->sex = $where['sex'];
-        isset($where['sort']) && $admin->sort = $where['sort'];
-        isset($where['status']) && $admin->status = $where['status'];
-        isset($where['token']) && $admin->token = $where['token'];
-        isset($where['token_time']) && $admin->token_time = $where['token_time'];
+            $admin = new Admin();
+            if (!empty($where['id'])) {
+                throw new Exception(GlobalMsg::ADD_ID);
+            }
+                        isset($where['admin_group_ids']) && $admin->admin_group_ids = $where['admin_group_ids'];
+            isset($where['avatar']) && $admin->avatar = $where['avatar'];
+            isset($where['email']) && $admin->email = $where['email'];
+            isset($where['is_admin']) && $admin->is_admin = $where['is_admin'];
+            isset($where['login_ip']) && $admin->login_ip = $where['login_ip'];
+            isset($where['mobile']) && $admin->mobile = $where['mobile'];
+            isset($where['name']) && $admin->name = $where['name'];
+            isset($where['password']) && $admin->password = $where['password'];
+            isset($where['real_name']) && $admin->real_name = $where['real_name'];
+            isset($where['salt']) && $admin->salt = $where['salt'];
+            isset($where['sex']) && $admin->sex = $where['sex'];
+            isset($where['sort']) && $admin->sort = $where['sort'];
+            isset($where['status']) && $admin->status = $where['status'];
+            isset($where['token']) && $admin->token = $where['token'];
+            isset($where['token_time']) && $admin->token_time = $where['token_time'];
 
 
-        $res = $admin->save();
-        if ($res == false) {
-            throw new Exception(GlobalMsg::SAVE_FAIL);
-        }
-        return $res;
+            $res = $admin->save();
+            if($res == false){
+                throw new Exception(GlobalMsg::SAVE_FAIL);
+            }
+            return $res;
     }
 
     public static function save(array $where = [])
     {
-        if (empty($where['id'])) {
-            throw new Exception(GlobalMsg::SAVE_NO_ID);
-        }
-        $admin = Admin::where('id', $where['id'])->first();
-        if ($admin == null) {
-            throw new Exception(GlobalMsg::SAVE_HAS_NO);
-        }
+            if (empty($where['id'])) {
+                throw new Exception(GlobalMsg::SAVE_NO_ID);
+            }
+            $admin = Admin::where('id', $where['id'])->first();
+            if($admin == null){
+                throw new Exception(GlobalMsg::SAVE_HAS_NO);
+            }
 
-        isset($where['admin_group_ids']) && $admin->admin_group_ids = $where['admin_group_ids'];
-        isset($where['avatar']) && $admin->avatar = $where['avatar'];
-        isset($where['email']) && $admin->email = $where['email'];
-        isset($where['is_admin']) && $admin->is_admin = $where['is_admin'];
-        isset($where['login_ip']) && $admin->login_ip = $where['login_ip'];
-        isset($where['mobile']) && $admin->mobile = $where['mobile'];
-        isset($where['name']) && $admin->name = $where['name'];
-        isset($where['password']) && $admin->password = $where['password'];
-        isset($where['real_name']) && $admin->real_name = $where['real_name'];
-        isset($where['salt']) && $admin->salt = $where['salt'];
-        isset($where['sex']) && $admin->sex = $where['sex'];
-        isset($where['sort']) && $admin->sort = $where['sort'];
-        isset($where['status']) && $admin->status = $where['status'];
-        isset($where['token']) && $admin->token = $where['token'];
-        isset($where['token_time']) && $admin->token_time = $where['token_time'];
+                        isset($where['admin_group_ids']) && $admin->admin_group_ids = $where['admin_group_ids'];
+            isset($where['avatar']) && $admin->avatar = $where['avatar'];
+            isset($where['email']) && $admin->email = $where['email'];
+            isset($where['is_admin']) && $admin->is_admin = $where['is_admin'];
+            isset($where['login_ip']) && $admin->login_ip = $where['login_ip'];
+            isset($where['mobile']) && $admin->mobile = $where['mobile'];
+            isset($where['name']) && $admin->name = $where['name'];
+            isset($where['password']) && $admin->password = $where['password'];
+            isset($where['real_name']) && $admin->real_name = $where['real_name'];
+            isset($where['salt']) && $admin->salt = $where['salt'];
+            isset($where['sex']) && $admin->sex = $where['sex'];
+            isset($where['sort']) && $admin->sort = $where['sort'];
+            isset($where['status']) && $admin->status = $where['status'];
+            isset($where['token']) && $admin->token = $where['token'];
+            isset($where['token_time']) && $admin->token_time = $where['token_time'];
 
 
-        $res = $admin->save();
-        if ($res == false) {
-            throw new Exception(GlobalMsg::SAVE_FAIL);
-        }
-        return $res;
+            $res = $admin->save();
+            if($res == false){
+                throw new Exception(GlobalMsg::SAVE_FAIL);
+            }
+            return $res;
     }
 
     public static function delete(int $id = 0)
@@ -204,10 +205,10 @@ class AdminService
         if ($admin == null) {
             throw new Exception(GlobalMsg::DEL_HAS_NO);
         }
-        $res = $admin->delete();
-        if ($res == false) {
+         $res = $admin->delete();
+         if($res == false){
             throw new Exception(GlobalMsg::SAVE_FAIL);
-        }
-        return $res;
+         }
+         return $res;
     }
 }

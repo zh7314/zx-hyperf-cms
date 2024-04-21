@@ -38,32 +38,31 @@ class AdminLogMiddleware implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         try {
-            $token = $request->header(GlobalCode::API_TOKEN, '');
-            if (empty($token)) {
-                //兼容文件下载文件验证 token
-                $token = $request->input(GlobalCode::API_TOKEN, '');
-                if (empty($token)) {
-                    throw new Exception('token为空，请重新登录');
+            //        p(AdminLog::class);
+            $log = new Log();
+            $log->method = $request->method();
+            $log->url = $request->path();
+            $log->route_name = $request->route()->getName();
+//        $adminLog->route_path = $request->getRequestUri();
+            $log->path = $request->url();
+            $log->request_ip = $request->ip();
+            $log->data = json_encode($request->input(), JSON_UNESCAPED_UNICODE);
+
+            if (!empty($request->admin_id)) {
+                $admin = Admin::where('id', $request->admin_id)->first();
+
+                if ($admin == null) {
+                    $log->remark = '非admin_id权限';
+                } else {
+                    $log->admin_id = $admin->id;
+                    $log->admin_name = $admin->real_name;
                 }
             }
-            $admin = Admin::where('token', $token)->first();
-            if ($admin == null) {
-                throw new Exception('token不存在');
+            $adminPermission = AdminPermission::where('path', $request->getRequestUri())->first();
+            if ($adminPermission !== null) {
+                $log->route_desc = $adminPermission->name;
             }
-            if ((int)time() > ((int)strtotime($admin->token_time) + (int)GlobalCode::TOKEN_TIME)) {
-                throw new Exception('token过期，请重新登录');
-            }
-
-            $request['admin_id'] = $admin->id;
-            $request['token'] = $token;
-
-            $request_url = $request->getPathInfo();
-            try {
-                //权限验证
-                CommonService::permissionCheck($admin->id, $request_url);
-            } catch (Exception $e) {
-                return $this->fail($e);
-            }
+            $log->save();
 
         } catch (Throwable $e) {
             return $this->grant($e);

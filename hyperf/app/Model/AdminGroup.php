@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class AdminGroup extends Model
-{
+class AdminGroup extends Model {
 
     protected ?string $table = 'admin_group';
 
@@ -15,5 +15,5 @@ class AdminGroup extends Model
 
     public bool $timestamps = false;
 
-    protected array $casts = ['id' => 'integer', 'sort' => 'integer',];
+    protected array $casts = ['id' => 'integer','sort' => 'integer',];
 }

@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class Video extends Model
-{
+class Video extends Model {
 
     protected ?string $table = 'video';
 
@@ -15,5 +15,5 @@ class Video extends Model
 
     public bool $timestamps = false;
 
-    protected array $casts = ['id' => 'integer', 'admin_id' => 'integer', 'count' => 'integer', 'is_local' => 'integer', 'is_show' => 'integer', 'sort' => 'integer',];
+    protected array $casts = ['id' => 'integer','admin_id' => 'integer','count' => 'integer','is_local' => 'integer','is_show' => 'integer','sort' => 'integer',];
 }

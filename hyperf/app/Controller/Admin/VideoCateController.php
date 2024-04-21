@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,26 +9,24 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class VideoCateController extends AbstractController
-{
+class VideoCateController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
+                        $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['parent_id'] = parameterCheck($this->request->input('parent_id'), 'float', 0);
             $where['platform'] = parameterCheck($this->request->input('platform'), 'string', '');
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
 
-            $data = VideoCateService::getList($where, $page, $pageSize);
+            $data = VideoCateService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -35,12 +34,11 @@ class VideoCateController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
+                        $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['parent_id'] = parameterCheck($this->request->input('parent_id'), 'float', 0);
@@ -71,13 +69,12 @@ class VideoCateController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
+                        $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['parent_id'] = parameterCheck($this->request->input('parent_id'), 'float', 0);
@@ -94,14 +91,13 @@ class VideoCateController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
+                        $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['parent_id'] = parameterCheck($this->request->input('parent_id'), 'float', 0);
@@ -118,8 +114,7 @@ class VideoCateController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class ProductCateController extends AbstractController
-{
+class ProductCateController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
+                        $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
@@ -30,7 +29,7 @@ class ProductCateController extends AbstractController
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
             $where['url'] = parameterCheck($this->request->input('url'), 'string', '');
 
-            $data = ProductCateService::getList($where, $page, $pageSize);
+            $data = ProductCateService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -38,12 +37,11 @@ class ProductCateController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
+                        $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
@@ -77,13 +75,12 @@ class ProductCateController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
+                        $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
@@ -103,14 +100,13 @@ class ProductCateController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
+                        $where['description'] = parameterCheck($this->request->input('description'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
@@ -130,8 +126,7 @@ class ProductCateController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

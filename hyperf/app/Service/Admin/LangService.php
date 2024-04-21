@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Service\Admin;
 
@@ -14,20 +15,20 @@ class LangService
     {
         $lang = new Lang();
 
-        if (!empty($where['name'])) {
+                    if (!empty($where['name'])) {
             $lang = $lang->where('name', $where['name']);
-        }
-        if (!empty($where['sort'])) {
+            }
+            if (!empty($where['sort'])) {
             $lang = $lang->where('sort', $where['sort']);
-        }
-        if (!empty($where['value'])) {
+            }
+            if (!empty($where['value'])) {
             $lang = $lang->where('value', $where['value']);
-        }
+            }
 
         $count = $lang->count();
 
-        if ($page > 0 && $pageSize > 0) {
-            $lang = $lang->forPage($page, $pageSize);
+        if ($page > 0 && $pageSize >0) {
+           $lang = $lang->forPage($page, $pageSize);
         }
 
         $list = $lang->orderBy('id', 'desc')->get()->toArray();
@@ -37,69 +38,69 @@ class LangService
 
     public static function getAll(array $where = [])
     {
-        $lang = new Lang();
+            $lang = new Lang();
 
-        if (!empty($where['name'])) {
+                        if (!empty($where['name'])) {
             $lang = $lang->where('name', $where['name']);
-        }
-        if (!empty($where['sort'])) {
+            }
+            if (!empty($where['sort'])) {
             $lang = $lang->where('sort', $where['sort']);
-        }
-        if (!empty($where['value'])) {
+            }
+            if (!empty($where['value'])) {
             $lang = $lang->where('value', $where['value']);
-        }
+            }
 
-        return $lang->orderBy('id', 'desc')->get()->toArray();
+            return $lang->orderBy('id', 'desc')->get()->toArray();
     }
 
     public static function getOne(int $id = 0)
     {
-        $lang = Lang::where('id', $id)->first();
-        if ($lang == null) {
-            throw new Exception(GlobalMsg::GET_HAS_NO);
-        }
-        return $lang;
+             $lang = Lang::where('id', $id)->first();
+             if ($lang == null) {
+                 throw new Exception(GlobalMsg::GET_HAS_NO);
+             }
+             return $lang;
     }
 
     public static function add(array $where = [])
     {
 
-        $lang = new Lang();
-        if (!empty($where['id'])) {
-            throw new Exception(GlobalMsg::ADD_ID);
-        }
-        isset($where['name']) && $lang->name = $where['name'];
-        isset($where['sort']) && $lang->sort = $where['sort'];
-        isset($where['value']) && $lang->value = $where['value'];
+            $lang = new Lang();
+            if (!empty($where['id'])) {
+                throw new Exception(GlobalMsg::ADD_ID);
+            }
+                        isset($where['name']) && $lang->name = $where['name'];
+            isset($where['sort']) && $lang->sort = $where['sort'];
+            isset($where['value']) && $lang->value = $where['value'];
 
 
-        $res = $lang->save();
-        if ($res == false) {
-            throw new Exception(GlobalMsg::SAVE_FAIL);
-        }
-        return $res;
+            $res = $lang->save();
+            if($res == false){
+                throw new Exception(GlobalMsg::SAVE_FAIL);
+            }
+            return $res;
     }
 
     public static function save(array $where = [])
     {
-        if (empty($where['id'])) {
-            throw new Exception(GlobalMsg::SAVE_NO_ID);
-        }
-        $lang = Lang::where('id', $where['id'])->first();
-        if ($lang == null) {
-            throw new Exception(GlobalMsg::SAVE_HAS_NO);
-        }
+            if (empty($where['id'])) {
+                throw new Exception(GlobalMsg::SAVE_NO_ID);
+            }
+            $lang = Lang::where('id', $where['id'])->first();
+            if($lang == null){
+                throw new Exception(GlobalMsg::SAVE_HAS_NO);
+            }
 
-        isset($where['name']) && $lang->name = $where['name'];
-        isset($where['sort']) && $lang->sort = $where['sort'];
-        isset($where['value']) && $lang->value = $where['value'];
+                        isset($where['name']) && $lang->name = $where['name'];
+            isset($where['sort']) && $lang->sort = $where['sort'];
+            isset($where['value']) && $lang->value = $where['value'];
 
 
-        $res = $lang->save();
-        if ($res == false) {
-            throw new Exception(GlobalMsg::SAVE_FAIL);
-        }
-        return $res;
+            $res = $lang->save();
+            if($res == false){
+                throw new Exception(GlobalMsg::SAVE_FAIL);
+            }
+            return $res;
     }
 
     public static function delete(int $id = 0)
@@ -108,10 +109,10 @@ class LangService
         if ($lang == null) {
             throw new Exception(GlobalMsg::DEL_HAS_NO);
         }
-        $res = $lang->delete();
-        if ($res == false) {
+         $res = $lang->delete();
+         if($res == false){
             throw new Exception(GlobalMsg::SAVE_FAIL);
-        }
-        return $res;
+         }
+         return $res;
     }
 }

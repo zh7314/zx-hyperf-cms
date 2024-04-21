@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class ProductController extends AbstractController
-{
+class ProductController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
@@ -37,7 +36,7 @@ class ProductController extends AbstractController
             $where['video_url'] = parameterCheck($this->request->input('video_url'), 'string', '');
             $where['view_count'] = parameterCheck($this->request->input('view_count'), 'int', 0);
 
-            $data = ProductService::getList($where, $page, $pageSize);
+            $data = ProductService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -45,12 +44,11 @@ class ProductController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
@@ -91,13 +89,12 @@ class ProductController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
@@ -124,14 +121,13 @@ class ProductController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
@@ -158,8 +154,7 @@ class ProductController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

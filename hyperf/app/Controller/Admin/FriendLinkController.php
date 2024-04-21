@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class FriendLinkController extends AbstractController
-{
+class FriendLinkController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
+                        $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['pic'] = parameterCheck($this->request->input('pic'), 'string', '');
@@ -29,7 +28,7 @@ class FriendLinkController extends AbstractController
             $where['title'] = parameterCheck($this->request->input('title'), 'string', '');
             $where['url'] = parameterCheck($this->request->input('url'), 'string', '');
 
-            $data = FriendLinkService::getList($where, $page, $pageSize);
+            $data = FriendLinkService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -37,12 +36,11 @@ class FriendLinkController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
+                        $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['pic'] = parameterCheck($this->request->input('pic'), 'string', '');
@@ -75,13 +73,12 @@ class FriendLinkController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
+                        $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['pic'] = parameterCheck($this->request->input('pic'), 'string', '');
@@ -100,14 +97,13 @@ class FriendLinkController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
+                        $where['is_follow'] = parameterCheck($this->request->input('is_follow'), 'int', 0);
             $where['is_show'] = parameterCheck($this->request->input('is_show'), 'int', 0);
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['pic'] = parameterCheck($this->request->input('pic'), 'string', '');
@@ -126,8 +122,7 @@ class FriendLinkController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

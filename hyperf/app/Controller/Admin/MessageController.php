@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class MessageController extends AbstractController
-{
+class MessageController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
+                        $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['is_sent'] = parameterCheck($this->request->input('is_sent'), 'int', 0);
@@ -34,7 +33,7 @@ class MessageController extends AbstractController
             $where['title'] = parameterCheck($this->request->input('title'), 'string', '');
             $where['type'] = parameterCheck($this->request->input('type'), 'int', 0);
 
-            $data = MessageService::getList($where, $page, $pageSize);
+            $data = MessageService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -42,12 +41,11 @@ class MessageController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
+                        $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['is_sent'] = parameterCheck($this->request->input('is_sent'), 'int', 0);
@@ -85,13 +83,12 @@ class MessageController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
+                        $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['is_sent'] = parameterCheck($this->request->input('is_sent'), 'int', 0);
@@ -115,14 +112,13 @@ class MessageController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
+                        $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['is_sent'] = parameterCheck($this->request->input('is_sent'), 'int', 0);
@@ -146,8 +142,7 @@ class MessageController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

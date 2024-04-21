@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class Config extends Model
-{
+class Config extends Model {
 
     protected ?string $table = 'config';
 

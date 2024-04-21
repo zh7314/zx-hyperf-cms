@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class DownloadController extends AbstractController
-{
+class DownloadController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['download_cate_id'] = parameterCheck($this->request->input('download_cate_id'), 'float', 0);
             $where['introduction'] = parameterCheck($this->request->input('introduction'), 'string', '');
             $where['is_local'] = parameterCheck($this->request->input('is_local'), 'int', 0);
@@ -33,7 +32,7 @@ class DownloadController extends AbstractController
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
             $where['url'] = parameterCheck($this->request->input('url'), 'string', '');
 
-            $data = DownloadService::getList($where, $page, $pageSize);
+            $data = DownloadService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -41,12 +40,11 @@ class DownloadController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['download_cate_id'] = parameterCheck($this->request->input('download_cate_id'), 'float', 0);
             $where['introduction'] = parameterCheck($this->request->input('introduction'), 'string', '');
             $where['is_local'] = parameterCheck($this->request->input('is_local'), 'int', 0);
@@ -83,13 +81,12 @@ class DownloadController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['download_cate_id'] = parameterCheck($this->request->input('download_cate_id'), 'float', 0);
             $where['introduction'] = parameterCheck($this->request->input('introduction'), 'string', '');
             $where['is_local'] = parameterCheck($this->request->input('is_local'), 'int', 0);
@@ -112,14 +109,13 @@ class DownloadController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['download_cate_id'] = parameterCheck($this->request->input('download_cate_id'), 'float', 0);
             $where['introduction'] = parameterCheck($this->request->input('introduction'), 'string', '');
             $where['is_local'] = parameterCheck($this->request->input('is_local'), 'int', 0);
@@ -142,8 +138,7 @@ class DownloadController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,23 +9,21 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class PlatformController extends AbstractController
-{
+class PlatformController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
+                        $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
             $where['value'] = parameterCheck($this->request->input('value'), 'string', '');
 
-            $data = PlatformService::getList($where, $page, $pageSize);
+            $data = PlatformService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -32,12 +31,11 @@ class PlatformController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
+                        $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
             $where['value'] = parameterCheck($this->request->input('value'), 'string', '');
 
@@ -65,13 +63,12 @@ class PlatformController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
+                        $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
             $where['value'] = parameterCheck($this->request->input('value'), 'string', '');
 
@@ -85,14 +82,13 @@ class PlatformController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
+                        $where['name'] = parameterCheck($this->request->input('name'), 'string', '');
             $where['sort'] = parameterCheck($this->request->input('sort'), 'int', 0);
             $where['value'] = parameterCheck($this->request->input('value'), 'string', '');
 
@@ -106,8 +102,7 @@ class PlatformController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

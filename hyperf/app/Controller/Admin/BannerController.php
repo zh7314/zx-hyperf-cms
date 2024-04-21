@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class BannerController extends AbstractController
-{
+class BannerController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['banner_cate_id'] = parameterCheck($this->request->input('banner_cate_id'), 'float', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
@@ -32,7 +31,7 @@ class BannerController extends AbstractController
             $where['url'] = parameterCheck($this->request->input('url'), 'string', '');
             $where['video_path'] = parameterCheck($this->request->input('video_path'), 'string', '');
 
-            $data = BannerService::getList($where, $page, $pageSize);
+            $data = BannerService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -40,12 +39,11 @@ class BannerController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['banner_cate_id'] = parameterCheck($this->request->input('banner_cate_id'), 'float', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
@@ -81,13 +79,12 @@ class BannerController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['banner_cate_id'] = parameterCheck($this->request->input('banner_cate_id'), 'float', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
@@ -109,14 +106,13 @@ class BannerController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['banner_cate_id'] = parameterCheck($this->request->input('banner_cate_id'), 'float', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
@@ -138,8 +134,7 @@ class BannerController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

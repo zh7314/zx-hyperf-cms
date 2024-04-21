@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class File extends Model
-{
+class File extends Model {
 
     protected ?string $table = 'file';
 
@@ -15,5 +15,5 @@ class File extends Model
 
     public bool $timestamps = false;
 
-    protected array $casts = ['id' => 'integer', 'file_size' => 'integer',];
+    protected array $casts = ['id' => 'integer','file_size' => 'integer',];
 }

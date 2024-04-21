@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class DownloadCate extends Model
-{
+class DownloadCate extends Model {
 
     protected ?string $table = 'download_cate';
 
@@ -15,5 +15,5 @@ class DownloadCate extends Model
 
     public bool $timestamps = false;
 
-    protected array $casts = ['id' => 'integer', 'is_show' => 'integer', 'sort' => 'integer',];
+    protected array $casts = ['id' => 'integer','is_show' => 'integer','sort' => 'integer',];
 }

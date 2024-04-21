@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class NewsController extends AbstractController
-{
+class NewsController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['count'] = parameterCheck($this->request->input('count'), 'int', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
@@ -38,7 +37,7 @@ class NewsController extends AbstractController
             $where['start_time'] = parameterCheck($this->request->input('start_time'), 'string', '');
             $where['title'] = parameterCheck($this->request->input('title'), 'string', '');
 
-            $data = NewsService::getList($where, $page, $pageSize);
+            $data = NewsService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -46,12 +45,11 @@ class NewsController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['count'] = parameterCheck($this->request->input('count'), 'int', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
@@ -93,13 +91,12 @@ class NewsController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['count'] = parameterCheck($this->request->input('count'), 'int', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
@@ -127,14 +124,13 @@ class NewsController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['count'] = parameterCheck($this->request->input('count'), 'int', 0);
             $where['end_time'] = parameterCheck($this->request->input('end_time'), 'string', '');
@@ -162,8 +158,7 @@ class NewsController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

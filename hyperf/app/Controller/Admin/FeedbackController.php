@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,25 +9,23 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class FeedbackController extends AbstractController
-{
+class FeedbackController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
+                        $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['nick_name'] = parameterCheck($this->request->input('nick_name'), 'string', '');
             $where['platform'] = parameterCheck($this->request->input('platform'), 'string', '');
 
-            $data = FeedbackService::getList($where, $page, $pageSize);
+            $data = FeedbackService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -34,12 +33,11 @@ class FeedbackController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
+                        $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['nick_name'] = parameterCheck($this->request->input('nick_name'), 'string', '');
@@ -69,13 +67,12 @@ class FeedbackController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
+                        $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['nick_name'] = parameterCheck($this->request->input('nick_name'), 'string', '');
@@ -91,14 +88,13 @@ class FeedbackController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
+                        $where['contact'] = parameterCheck($this->request->input('contact'), 'string', '');
             $where['content'] = parameterCheck($this->request->input('content'), 'string', '');
             $where['lang'] = parameterCheck($this->request->input('lang'), 'string', '');
             $where['nick_name'] = parameterCheck($this->request->input('nick_name'), 'string', '');
@@ -114,8 +110,7 @@ class FeedbackController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

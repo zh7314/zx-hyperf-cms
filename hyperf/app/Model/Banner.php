@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class Banner extends Model
-{
+class Banner extends Model {
 
     protected ?string $table = 'banner';
 
@@ -15,5 +15,5 @@ class Banner extends Model
 
     public bool $timestamps = false;
 
-    protected array $casts = ['id' => 'integer', 'sort' => 'integer',];
+    protected array $casts = ['id' => 'integer','sort' => 'integer',];
 }

@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class RequestLog extends Model
-{
+class RequestLog extends Model {
 
     protected ?string $table = 'request_log';
 

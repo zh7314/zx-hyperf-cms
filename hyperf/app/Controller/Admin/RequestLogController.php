@@ -1,4 +1,5 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
@@ -8,19 +9,17 @@ use App\Utils\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class RequestLogController extends AbstractController
-{
+class RequestLogController extends AbstractController{
 
     use ResponseTrait;
 
-    public function getList()
-    {
+    public function getList() {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'), 'int', 0);
-            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
+            $page = parameterCheck($this->request->input('page'),'int',0);
+            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
 
-            $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
+                        $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['header'] = parameterCheck($this->request->input('header'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -28,7 +27,7 @@ class RequestLogController extends AbstractController
             $where['return_at'] = parameterCheck($this->request->input('return_at'), 'string', '');
             $where['url'] = parameterCheck($this->request->input('url'), 'string', '');
 
-            $data = RequestLogService::getList($where, $page, $pageSize);
+            $data = RequestLogService::getList($where,$page,$pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -36,12 +35,11 @@ class RequestLogController extends AbstractController
         }
     }
 
-    public function getAll()
-    {
+    public function getAll() {
         try {
             $where = [];
 
-            $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
+                        $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['header'] = parameterCheck($this->request->input('header'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -73,13 +71,12 @@ class RequestLogController extends AbstractController
         }
     }
 
-    public function add()
-    {
+    public function add() {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
+                        $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['header'] = parameterCheck($this->request->input('header'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -97,14 +94,13 @@ class RequestLogController extends AbstractController
         }
     }
 
-    public function save()
-    {
+    public function save() {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-            $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
+                        $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['header'] = parameterCheck($this->request->input('header'), 'string', '');
             $where['ip'] = parameterCheck($this->request->input('ip'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -122,8 +118,7 @@ class RequestLogController extends AbstractController
         }
     }
 
-    public function delete()
-    {
+    public function delete() {
 
         Db::beginTransaction();
         try {

@@ -1,11 +1,11 @@
-<?php
+<?php 
+declare(strict_types=1);
 
 namespace App\Model;
 
 use Hyperf\DbConnection\Model\Model;
 
-class Message extends Model
-{
+class Message extends Model {
 
     protected ?string $table = 'message';
 
@@ -15,5 +15,5 @@ class Message extends Model
 
     public bool $timestamps = false;
 
-    protected array $casts = ['id' => 'integer', 'is_sent' => 'integer', 'status' => 'integer', 'type' => 'integer',];
+    protected array $casts = ['id' => 'integer','is_sent' => 'integer','status' => 'integer','type' => 'integer',];
 }
