@@ -3,15 +3,255 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid 'b70d42412d1b81423093980be73d0c2b66186682'
-    oldFile: !uuid '42a3821fb1444d67c52b3936863629741306902e'
+    newFile: !uuid '8e9b104efd161e469a73b7fda81f297d13d89146'
+    oldFile: !uuid 'b70d42412d1b81423093980be73d0c2b66186682'
+  /hyperf/app:
+    newFile: !uuid '9571313d1d3429f54f39d1171f3d4ed8d47a761a'
+    oldFile: !uuid 'ba7b002ac678be39059ec0a753a7daf340da8cc3'
+  /hyperf/app/Controller:
+    newFile: !uuid 'f5feddb4553c121db8e1da89478bed997755b4a9'
+    oldFile: !uuid '0afea09c0e55fc646f044556ed6b1b6bbae29665'
+  /hyperf/app/Controller/Admin:
+    newFile: !uuid 'b715ae165911f7f348a80e3e1a1da3ee80b00678'
+    oldFile: !uuid '102772476adcab990c48c543ed94fcd7d9901656'
+  /hyperf/app/Controller/Admin/AdminController.php:
+    newFile: !uuid 'e0f58572cb1bbb2410d63c8e8d767cadc102170b'
+    oldFile: !uuid '9096780c02c99410315e71751569274959708fa9'
+  /hyperf/app/Controller/Admin/AdminGroupController.php:
+    newFile: !uuid '0a434e7fb676aa707805e57b82c13fc02a73bd7e'
+    oldFile: null
+  /hyperf/app/Controller/Admin/AdminLogController.php:
+    newFile: !uuid '6daa30fb439f2accc020d68edb5d824bce428066'
+    oldFile: null
+  /hyperf/app/Controller/Admin/AdminPermissionController.php:
+    newFile: !uuid 'e4c3ba5e5b1bba8bfe2857477e438c0a3943b904'
+    oldFile: null
+  /hyperf/app/Controller/Admin/BannerCateController.php:
+    newFile: !uuid '37037c980aa4bdc316fd935d488af817f27579a4'
+    oldFile: null
+  /hyperf/app/Controller/Admin/BannerController.php:
+    newFile: !uuid 'adaa6baae73afe7cbed38acda964ca2c9bc534b5'
+    oldFile: null
+  /hyperf/app/Controller/Admin/ConfigController.php:
+    newFile: !uuid 'cf8af1d9713b9109f8264e7803e040c9d045a0ee'
+    oldFile: null
+  /hyperf/app/Controller/Admin/DownloadCateController.php:
+    newFile: !uuid '0162b49435264a5ba67ab7e871b1fb92aaded7aa'
+    oldFile: null
+  /hyperf/app/Controller/Admin/DownloadController.php:
+    newFile: !uuid '78fb17a74e1e6353b8a55f1f041bac11185ef12c'
+    oldFile: null
+  /hyperf/app/Controller/Admin/FeedbackController.php:
+    newFile: !uuid 'afeaa52ea13faa78b802789f4281d59a51cdd17a'
+    oldFile: null
+  /hyperf/app/Controller/Admin/FileController.php:
+    newFile: !uuid '3a43c9aa8b0ab1128b298119ccdd9de3db26f9b6'
+    oldFile: null
+  /hyperf/app/Controller/Admin/FriendLinkController.php:
+    newFile: !uuid '946e22a760fb5079e6e8474ef47c992576a73a48'
+    oldFile: null
+  /hyperf/app/Controller/Admin/JobOffersController.php:
+    newFile: !uuid '8ad604fe5341cb6c31ee3935f058bbff17e1ae76'
+    oldFile: null
+  /hyperf/app/Controller/Admin/LangController.php:
+    newFile: !uuid '657049d3ea65003f497b264f8281a45cd34d82f4'
+    oldFile: null
+  /hyperf/app/Controller/Admin/MessageController.php:
+    newFile: !uuid '2ddbcdb4fb40694b8bc0619fa534bcd2db654ca2'
+    oldFile: null
+  /hyperf/app/Controller/Admin/NewsCateController.php:
+    newFile: !uuid '8f6294f52106379323551b0c1970b3b622587dc4'
+    oldFile: null
+  /hyperf/app/Controller/Admin/NewsController.php:
+    newFile: !uuid 'a1697fe612557dd11c85a03a313312c26bec09c2'
+    oldFile: null
+  /hyperf/app/Controller/Admin/PlatformController.php:
+    newFile: !uuid '8f4ee0730364a0fd29214fd5146dadd34d4ad7a4'
+    oldFile: null
+  /hyperf/app/Controller/Admin/ProductCateController.php:
+    newFile: !uuid 'ba2b9e4a47ba40413f43d773abcd34b0bd447831'
+    oldFile: null
+  /hyperf/app/Controller/Admin/ProductController.php:
+    newFile: !uuid 'd58221ce8f181ce52df7ee488a5e25abab2f5d6a'
+    oldFile: null
+  /hyperf/app/Controller/Admin/RequestLogController.php:
+    newFile: !uuid 'a6a2995bb6b70f120e08bcf7f985f21c157b021b'
+    oldFile: null
+  /hyperf/app/Controller/Admin/SeoController.php:
+    newFile: !uuid '2b73372b14aa49aa0d16cb409eb83e0bafb0229f'
+    oldFile: null
+  /hyperf/app/Controller/Admin/VideoCateController.php:
+    newFile: !uuid '05dc1f954595823cf9787cc557ce6ee5f5c299be'
+    oldFile: null
+  /hyperf/app/Controller/Admin/VideoController.php:
+    newFile: !uuid '7b73a5b31bd1284f03d50808b1731c94586cddda'
+    oldFile: null
+  /hyperf/app/Model:
+    newFile: !uuid '256fdf380911fcf6bfd15a1142b503bbbce005f7'
+    oldFile: !uuid '1734017a3c280a1c053216cce8b31781829857cc'
+  /hyperf/app/Model/Admin.php:
+    newFile: !uuid '0503fff66149c017c0d4f9d17ba79d0b12c91ef1'
+    oldFile: !uuid 'bd9fbf277ed2da74d1cf6280c6fd972e04a6f1e9'
+  /hyperf/app/Model/AdminGroup.php:
+    newFile: !uuid '869265f0b038a0b0840ef4daf02fff90c8f3b56b'
+    oldFile: null
+  /hyperf/app/Model/AdminLog.php:
+    newFile: !uuid '8fa66df268b80e551392372cac39511c9b2ec3dd'
+    oldFile: null
+  /hyperf/app/Model/AdminPermission.php:
+    newFile: !uuid 'bb797fabc3819c0e6d4e5198a75e9794c87eae24'
+    oldFile: null
+  /hyperf/app/Model/Banner.php:
+    newFile: !uuid '7e9703b324f4682eb982bbd772815d66338451a6'
+    oldFile: null
+  /hyperf/app/Model/BannerCate.php:
+    newFile: !uuid '59386fd231932c643611d6c1b43fa3b5a090bb8f'
+    oldFile: null
+  /hyperf/app/Model/Config.php:
+    newFile: !uuid 'e3d70ab412b0e848af0b25168275f65b44b2062e'
+    oldFile: null
+  /hyperf/app/Model/Download.php:
+    newFile: !uuid '7ed9635d3ca9c29401e07b9d695758466e73e328'
+    oldFile: null
+  /hyperf/app/Model/DownloadCate.php:
+    newFile: !uuid '31342d62a6975843177ada8b10a4912cb516c336'
+    oldFile: null
+  /hyperf/app/Model/Feedback.php:
+    newFile: !uuid '3d5880b1b59652cc110e9ac280ba98aba18e9077'
+    oldFile: null
+  /hyperf/app/Model/File.php:
+    newFile: !uuid '42e9915136838a165b3cc343cc1bdf288f1f52bc'
+    oldFile: null
+  /hyperf/app/Model/FriendLink.php:
+    newFile: !uuid 'e08d813db9991d40820aea30e347a9943de420e8'
+    oldFile: null
+  /hyperf/app/Model/JobOffers.php:
+    newFile: !uuid '8f98ae03cff49d7e99271ddc933b745ed3d2c4ee'
+    oldFile: null
+  /hyperf/app/Model/Lang.php:
+    newFile: !uuid 'dcc28de0cd69068dcffe801f3df9c08739dc77e6'
+    oldFile: null
+  /hyperf/app/Model/Message.php:
+    newFile: !uuid 'e287887b2b6e4970e80cf960d6b2990caa54913b'
+    oldFile: null
+  /hyperf/app/Model/News.php:
+    newFile: !uuid 'c0fe84f417e52425339fd1bb79f7ba322d4e95f0'
+    oldFile: null
+  /hyperf/app/Model/NewsCate.php:
+    newFile: !uuid '1df90557191e6e9d0fbf708a5b344ef36de7a841'
+    oldFile: null
+  /hyperf/app/Model/Platform.php:
+    newFile: !uuid '5289c9afd6110ca64df23371991413c3e9183bc8'
+    oldFile: null
+  /hyperf/app/Model/Product.php:
+    newFile: !uuid '5c36bbedb93e5365b9b92d3706ebb6ed3748a447'
+    oldFile: null
+  /hyperf/app/Model/ProductCate.php:
+    newFile: !uuid '8083bf6b40a070271e49c483a08bc850940a7ea4'
+    oldFile: null
+  /hyperf/app/Model/RequestLog.php:
+    newFile: !uuid 'fbbcdf770396196bcafcce62e584659e8045e2f8'
+    oldFile: null
+  /hyperf/app/Model/Seo.php:
+    newFile: !uuid 'eb2ad59620e6c13df1fe4974d5c27834a07b9e2e'
+    oldFile: null
+  /hyperf/app/Model/Video.php:
+    newFile: !uuid 'a8bd0dd425a5a6b2f4b08409ddcb08e4494effa0'
+    oldFile: null
+  /hyperf/app/Model/VideoCate.php:
+    newFile: !uuid '38888620181295351409ab9d6e30d649c698a5d3'
+    oldFile: null
+  /hyperf/app/Service:
+    newFile: !uuid '47d12ed2401aed62ee781c3c4121532f774289ff'
+    oldFile: !uuid 'f82871ac92b94ef1276f629fb692c02a04a4e990'
+  /hyperf/app/Service/Admin:
+    newFile: !uuid 'dae294a4aeb5db97eb689143be3358972802d2d1'
+    oldFile: !uuid 'f62b7dfa8638690f8d1adcb35d79738fed59f54a'
+  /hyperf/app/Service/Admin/AdminGroupService.php:
+    newFile: !uuid '9805a0f494b65e6c2b6a3a6d841f3655e95f4a06'
+    oldFile: null
+  /hyperf/app/Service/Admin/AdminLogService.php:
+    newFile: !uuid '6535355c84fb9fb78a1d04af412a517b959f9337'
+    oldFile: null
+  /hyperf/app/Service/Admin/AdminPermissionService.php:
+    newFile: !uuid 'c8f4f2707e7f9f5887d3a9ae2064a5f08ffc5016'
+    oldFile: null
+  /hyperf/app/Service/Admin/AdminService.php:
+    newFile: !uuid '6857a3229de4cc7ffba9a175b367ce93f3fd71f6'
+    oldFile: !uuid '90258077ad9b0afa4666fd1a581ee7692d6b8e10'
+  /hyperf/app/Service/Admin/BannerCateService.php:
+    newFile: !uuid '5b67abe2c54e71b6eafdba4c27231ff07328ccdb'
+    oldFile: null
+  /hyperf/app/Service/Admin/BannerService.php:
+    newFile: !uuid '1dcd8199224ff2ade6b0aa5ebb6d5068a2de07b0'
+    oldFile: null
+  /hyperf/app/Service/Admin/CommonService.php:
+    newFile: !uuid 'c8d35321a06468a48d5382cc261d4f80c09a8685'
+    oldFile: !uuid '2318bd71e072f19267ecb47f71ca54a0a0c9cd51'
+  /hyperf/app/Service/Admin/ConfigService.php:
+    newFile: !uuid '94bfac99266957969c72061573dbfdc784d9bdb0'
+    oldFile: null
+  /hyperf/app/Service/Admin/DownloadCateService.php:
+    newFile: !uuid '427257f0daaddd23272c58db442ff92d7c35defc'
+    oldFile: null
+  /hyperf/app/Service/Admin/DownloadService.php:
+    newFile: !uuid 'aac7df99a1d9fc9b54ef16bddc07be31556734ea'
+    oldFile: null
+  /hyperf/app/Service/Admin/FeedbackService.php:
+    newFile: !uuid 'fe67275963d663e0134cc75889650c8b741d1f38'
+    oldFile: null
+  /hyperf/app/Service/Admin/FileService.php:
+    newFile: !uuid '7c025f1d5238b579810b57b611583b45e655de57'
+    oldFile: null
+  /hyperf/app/Service/Admin/FriendLinkService.php:
+    newFile: !uuid '3cf119c6eecd3f34ac7a14eafb11b191083c8585'
+    oldFile: null
+  /hyperf/app/Service/Admin/JobOffersService.php:
+    newFile: !uuid '1136639c7eef274fb87343cc1510371e42a4f04e'
+    oldFile: null
+  /hyperf/app/Service/Admin/LangService.php:
+    newFile: !uuid '3fd5e7e5da2c576d742114ab0ceaadaf5a0aa425'
+    oldFile: null
+  /hyperf/app/Service/Admin/LoginService.php:
+    newFile: !uuid '7193ae8cbfbd66ea12a7ab81549a28e41f11482e'
+    oldFile: !uuid 'd11ad5abb8291613cb7a6efd00fe68689baef58f'
+  /hyperf/app/Service/Admin/MessageService.php:
+    newFile: !uuid '7b7c1bda310553b5696723f5bd4ef1bc41e85702'
+    oldFile: null
+  /hyperf/app/Service/Admin/NewsCateService.php:
+    newFile: !uuid '5e04e7afe8450689fc5e86a25ac4492d2a6e3832'
+    oldFile: null
+  /hyperf/app/Service/Admin/NewsService.php:
+    newFile: !uuid 'd558d047ba347aa69af684bffb675e9d6db8803a'
+    oldFile: null
+  /hyperf/app/Service/Admin/PlatformService.php:
+    newFile: !uuid 'fb0305ff6b16700db45e8ce9f1c1e63725be65b6'
+    oldFile: null
+  /hyperf/app/Service/Admin/ProductCateService.php:
+    newFile: !uuid '85a95dc2041a2f8c0a37f948092f8d1b9b4bfb0a'
+    oldFile: null
+  /hyperf/app/Service/Admin/ProductService.php:
+    newFile: !uuid '16c2ea4736916267079b3054ce83011dd16a9aa4'
+    oldFile: null
+  /hyperf/app/Service/Admin/RequestLogService.php:
+    newFile: !uuid '19fcaf1d34f870dd9302f005fccd2b5151e8ba06'
+    oldFile: null
+  /hyperf/app/Service/Admin/SeoService.php:
+    newFile: !uuid '601d27e218dc9f4fbef1659d2aab936f877b7f25'
+    oldFile: null
+  /hyperf/app/Service/Admin/VideoCateService.php:
+    newFile: !uuid '7b189104b24e876ebc942c785b7ac4928483b73a'
+    oldFile: null
+  /hyperf/app/Service/Admin/VideoService.php:
+    newFile: !uuid 'cbeb42d2b7ec3be264ac3322750641cb3ea2eefe'
+    oldFile: null
   /hyperf/config:
-    newFile: !uuid '2ddab21a299cd1e20c4aa9be8053788fbd73a054'
-    oldFile: !uuid '8f0658b1eb67c271f6bf4d4de8c053fc44a0ea07'
+    newFile: !uuid '4ab0547cdc9409525ec15146eec7771352fdf88e'
+    oldFile: !uuid '2ddab21a299cd1e20c4aa9be8053788fbd73a054'
   /hyperf/config/routes.php:
-    newFile: !uuid '98d51e67c2e25c2191e993f28358752f456e042c'
-    oldFile: !uuid '13a35f4cff07cba9ee7dcb962ee7574892046cef'
-gitCommitId: !uuid 'c4aafae4452b7c76489c7f1779f9ced7452df710'
+    newFile: !uuid 'b43515f1f30a123dafe685f1cd9c17ab22ab7c41'
+    oldFile: !uuid '98d51e67c2e25c2191e993f28358752f456e042c'
+gitCommitId: !uuid '644240a2524ddb4e5020488e4db135eef9fef7e9'
 renames: {
   }
-revisionId: 14
+revisionId: 15
