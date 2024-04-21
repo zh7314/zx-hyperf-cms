@@ -17,11 +17,10 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Throwable;
+use Hyperf\Context\Context;
 
-class ApiLogMiddleware implements MiddlewareInterface
+class CorsMiddleware implements MiddlewareInterface
 {
-    protected static $id;
-
     use ResponseTrait;
 
     protected ContainerInterface $container;
@@ -39,23 +38,19 @@ class ApiLogMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        try {
 
-//        //第一步 先存储信息
-            $log = new RequestLog();
-            $log->method = $request->method();
-            $log->ip = $request->ip() == '127.0.0.1' ? $request->header('x-real-ip', '127.0.0.1') : $request->ip();
-            $log->url = $request->path();
-            $log->params = json_encode([$request->all(), $request->getContent()], JSON_UNESCAPED_UNICODE);
-            $header_array = array_intersect_key($request->header(), array_flip(['referer', 'authorization', 'x-real-ip', 'x-forwarded-for']));
+        $response = Context::get(ResponseInterface::class);
+        $response = $response->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Credentials', 'true')
+            // Headers 可以根据实际情况进行改写。
+            ->withHeader('Access-Control-Allow-Headers', 'DNT,Keep-Alive,User-Agent,Cache-Control,Content-Type,Authorization');
 
-            $log->header = json_encode($header_array, JSON_UNESCAPED_UNICODE);
-            $log->save();
-            self::$id = $log->id;
+        Context::set(ResponseInterface::class, $response);
 
-        } catch (Throwable $e) {
-            return $this->grant($e);
+        if ($request->getMethod() == 'OPTIONS') {
+            return $response;
         }
+
         return $handler->handle($request);
     }
 }

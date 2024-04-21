@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Middleware;
 
 use App\Model\Admin;
+use App\Model\AdminPermission;
 use App\Service\Admin\CommonService;
 use App\Utils\GlobalCode;
 use App\Utils\ResponseTrait;
@@ -17,6 +18,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Throwable;
+use App\Model\AdminLog as Log;
 
 class AdminLogMiddleware implements MiddlewareInterface
 {
