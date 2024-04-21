@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Service\Admin;
 
-
 use App\Model\Admin;
 use App\Utils\GlobalCode;
 use Exception;

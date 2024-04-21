@@ -1,11 +1,11 @@
 <?php
-declare(strict_types=1);
 
 namespace App\Service\Admin;
 
 use App\Model\Admin;
-use App\Utils\GlobalMsg;
 use Exception;
+use App\Utils\GlobalCode;
+use App\Utils\GlobalMsg;
 
 class AdminService
 {
@@ -14,6 +14,9 @@ class AdminService
     {
         $admin = new Admin();
 
+        if (!empty($where['admin_group_ids'])) {
+            $admin = $admin->where('admin_group_ids', $where['admin_group_ids']);
+        }
         if (!empty($where['avatar'])) {
             $admin = $admin->where('avatar', $where['avatar']);
         }
@@ -49,6 +52,12 @@ class AdminService
         }
         if (!empty($where['status'])) {
             $admin = $admin->where('status', $where['status']);
+        }
+        if (!empty($where['token'])) {
+            $admin = $admin->where('token', $where['token']);
+        }
+        if (!empty($where['token_time'])) {
+            $admin = $admin->where('token_time', $where['token_time']);
         }
 
         $count = $admin->count();
@@ -66,6 +75,9 @@ class AdminService
     {
         $admin = new Admin();
 
+        if (!empty($where['admin_group_ids'])) {
+            $admin = $admin->where('admin_group_ids', $where['admin_group_ids']);
+        }
         if (!empty($where['avatar'])) {
             $admin = $admin->where('avatar', $where['avatar']);
         }
@@ -101,6 +113,12 @@ class AdminService
         }
         if (!empty($where['status'])) {
             $admin = $admin->where('status', $where['status']);
+        }
+        if (!empty($where['token'])) {
+            $admin = $admin->where('token', $where['token']);
+        }
+        if (!empty($where['token_time'])) {
+            $admin = $admin->where('token_time', $where['token_time']);
         }
 
         return $admin->orderBy('id', 'desc')->get()->toArray();
@@ -129,12 +147,15 @@ class AdminService
         isset($where['login_ip']) && $admin->login_ip = $where['login_ip'];
         isset($where['mobile']) && $admin->mobile = $where['mobile'];
         isset($where['name']) && $admin->name = $where['name'];
-        isset($where['password']) && $admin->password = md5(md5($where['password']));
+        isset($where['password']) && $admin->password = $where['password'];
         isset($where['real_name']) && $admin->real_name = $where['real_name'];
         isset($where['salt']) && $admin->salt = $where['salt'];
         isset($where['sex']) && $admin->sex = $where['sex'];
         isset($where['sort']) && $admin->sort = $where['sort'];
         isset($where['status']) && $admin->status = $where['status'];
+        isset($where['token']) && $admin->token = $where['token'];
+        isset($where['token_time']) && $admin->token_time = $where['token_time'];
+
 
         $res = $admin->save();
         if ($res == false) {
@@ -152,8 +173,6 @@ class AdminService
         if ($admin == null) {
             throw new Exception(GlobalMsg::SAVE_HAS_NO);
         }
-//        p($where['admin_group_ids']);
-//        pp($admin->toArray());
 
         isset($where['admin_group_ids']) && $admin->admin_group_ids = $where['admin_group_ids'];
         isset($where['avatar']) && $admin->avatar = $where['avatar'];
@@ -162,12 +181,15 @@ class AdminService
         isset($where['login_ip']) && $admin->login_ip = $where['login_ip'];
         isset($where['mobile']) && $admin->mobile = $where['mobile'];
         isset($where['name']) && $admin->name = $where['name'];
-        !empty($where['password']) && $admin->password = md5(md5($where['password']));
+        isset($where['password']) && $admin->password = $where['password'];
         isset($where['real_name']) && $admin->real_name = $where['real_name'];
         isset($where['salt']) && $admin->salt = $where['salt'];
         isset($where['sex']) && $admin->sex = $where['sex'];
         isset($where['sort']) && $admin->sort = $where['sort'];
         isset($where['status']) && $admin->status = $where['status'];
+        isset($where['token']) && $admin->token = $where['token'];
+        isset($where['token_time']) && $admin->token_time = $where['token_time'];
+
 
         $res = $admin->save();
         if ($res == false) {

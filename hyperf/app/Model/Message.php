@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Model;
+
+use Hyperf\DbConnection\Model\Model;
+
+class Message extends Model
+{
+
+    protected ?string $table = 'message';
+
+    protected array $fillable = [];
+
+    protected string $primaryKey = 'id';
+
+    public bool $timestamps = false;
+
+    protected array $casts = ['id' => 'integer', 'is_sent' => 'integer', 'status' => 'integer', 'type' => 'integer',];
+}

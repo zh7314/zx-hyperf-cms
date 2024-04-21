@@ -5,6 +5,7 @@ namespace App\Service\Admin;
 
 
 use App\Model\Admin;
+use App\Model\AdminPermission;
 use Exception;
 
 class CommonService
