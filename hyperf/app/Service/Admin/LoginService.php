@@ -6,6 +6,7 @@ namespace App\Service\Admin;
 use App\Model\Admin;
 use App\Utils\GlobalCode;
 use Exception;
+use http\Url;
 
 class LoginService
 {
@@ -51,7 +52,7 @@ class LoginService
         $data['userInfo']['dashboard'] = '';
         $data['userInfo']['role'][] = ["SA", "admin", "Auditor"];
         $data['userInfo']['userId'] = $admin->id;
-        $data['userInfo']['avatar'] = URL::to($admin->avatar);
+        $data['userInfo']['avatar'] = $admin->avatar;
         $data['userInfo']['userName'] = $admin->real_name;
         $data['tokenTime'] = GlobalCode::TOKEN_TIME;
         $data['tokenKey'] = GlobalCode::API_TOKEN;

@@ -11,6 +11,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
+use App\Middleware\CorsMiddleware;
 use Hyperf\HttpServer\Router\Router;
 use App\Middleware\AdminCheckMiddleware;
 
@@ -24,15 +25,19 @@ Router::get('/favicon.ico', function () {
     return '';
 });
 
-Router::addGroup('/admin', function () {
+Router::addGroup('/v2', function () {
+    Router::get('/index', [\App\Controller\IndexController::class, 'index']);
+}, ['middleware' => [FooMiddleware::class]]);
+
+Router::addGroup('/api/admin', function () {
 
     Router::post('/login', [\App\Controller\Admin\IndexController::class, 'login']);
     Router::post('/getCaptcha', [\App\Controller\Admin\IndexController::class, 'getCaptcha']);
     Router::post('/uploadPic', [\App\Controller\Admin\IndexController::class, 'uploadPic']);
     Router::post('/uploadFile', [\App\Controller\Admin\IndexController::class, 'uploadFile']);
-});
+}, ['middleware' => [CorsMiddleware::class]]);
 
-Router::addGroup('/admin', function () {
+Router::addGroup('/api/admin', function () {
 
     Router::post('/getMenu', [\App\Controller\Admin\IndexController::class, 'getMenu']);
     Router::post('/getInfo', [\App\Controller\Admin\IndexController::class, 'getInfo']);
@@ -240,4 +245,4 @@ Router::addGroup('/admin', function () {
         Router::post('/save', [\App\Controller\Admin\VideoCateController::class, 'save']);
         Router::post('/delete', [\App\Controller\Admin\VideoCateController::class, 'delete']);
     });
-}, ['middleware' => [AdminCheckMiddleware::class]]);
+}, ['middleware' => [AdminCheckMiddleware::class, CorsMiddleware::class]]);

@@ -30,15 +30,15 @@ class IndexController extends AbstractController
         }
     }
 
-    public function login(RequestInterface $request, ResponseInterface $response)
+    public function login()
     {
         Db::beginTransaction();
         try {
 
-            $name = parameterCheck($request->username, 'string', '');
-            $password = parameterCheck($request->password, 'string', '');
-            $code = parameterCheck($request->code, 'string', '');
-            $captchaKey = parameterCheck($request->captchaKey, 'string', '');
+            $name = parameterCheck($this->request->input('username'), 'string', '');
+            $password = parameterCheck($this->request->input('password'), 'string', '');
+            $code = parameterCheck($this->request->input('code'), 'string', '');
+            $captchaKey = parameterCheck($this->request->input('captchaKey'), 'string', '');
 
             $data = LoginService::login($name, $password, $code, $captchaKey);
             Db::commit();
@@ -49,11 +49,11 @@ class IndexController extends AbstractController
         }
     }
 
-    public function logout(RequestInterface $request, ResponseInterface $response)
+    public function logout()
     {
         try {
 
-            $adminId = parameterCheck($request->admin_id, 'string', '');
+            $adminId = parameterCheck($this->request->admin_id, 'string', '');
 
             $data = LoginService::logout($adminId);
 
@@ -63,11 +63,11 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getInfo(RequestInterface $request, ResponseInterface $response)
+    public function getInfo()
     {
         try {
 
-            $adminId = parameterCheck($request->admin_id, 'string', '');
+            $adminId = parameterCheck($this->request->admin_id, 'string', '');
 
             $data = LoginService::getInfo($adminId);
 
@@ -77,11 +77,11 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getMenu(RequestInterface $request, ResponseInterface $response)
+    public function getMenu()
     {
         try {
 
-            $adminId = parameterCheck($request->admin_id, 'string', '');
+            $adminId = parameterCheck($this->request->admin_id, 'string', '');
 
             $data = LoginService::getMenu($adminId);
 
@@ -92,9 +92,9 @@ class IndexController extends AbstractController
     }
 
 
-    public function uploadPic(RequestInterface $request, ResponseInterface $response)
+    public function uploadPic()
     {
-        $file = $request->file('file');
+        $file = $this->request->file('file');
 
         try {
             if ($file == null) {
@@ -109,9 +109,9 @@ class IndexController extends AbstractController
         }
     }
 
-    public function uploadFile(RequestInterface $request, ResponseInterface $response)
+    public function uploadFile()
     {
-        $file = $request->file('file');
+        $file = $this->request->file('file');
 
         try {
             if ($file == null) {
@@ -126,7 +126,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getVersion(RequestInterface $request, ResponseInterface $response)
+    public function getVersion()
     {
         try {
 
@@ -140,17 +140,17 @@ class IndexController extends AbstractController
         }
     }
 
-    public function changePwd(RequestInterface $request, ResponseInterface $response)
+    public function changePwd()
     {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['id'] = parameterCheck($request->input('admin_id'), 'int', 0);
+            $where['id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
 
-            $where['userPassword'] = parameterCheck($request->input('userPassword'), 'string', '');
-            $where['newPassword'] = parameterCheck($request->input('newPassword'), 'string', '');
-            $where['confirmNewPassword'] = parameterCheck($request->input('confirmNewPassword'), 'string', '');
+            $where['userPassword'] = parameterCheck($this->request->input('userPassword'), 'string', '');
+            $where['newPassword'] = parameterCheck($this->request->input('newPassword'), 'string', '');
+            $where['confirmNewPassword'] = parameterCheck($this->request->input('confirmNewPassword'), 'string', '');
 
             $data = LoginService::changePwd($where);
 
@@ -162,7 +162,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getGroupTree(RequestInterface $request, ResponseInterface $response)
+    public function getGroupTree()
     {
         try {
 
@@ -174,7 +174,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getMenuTree(RequestInterface $request, ResponseInterface $response)
+    public function getMenuTree()
     {
         try {
 
@@ -186,7 +186,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getdownloadCateTree(RequestInterface $request, ResponseInterface $response)
+    public function getdownloadCateTree()
     {
         try {
 
@@ -198,7 +198,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getNewsCateTree(RequestInterface $request, ResponseInterface $response)
+    public function getNewsCateTree()
     {
         try {
 
@@ -210,7 +210,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getProductCateTree(RequestInterface $request, ResponseInterface $response)
+    public function getProductCateTree()
     {
         try {
 
@@ -222,7 +222,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getVideoCateTree(RequestInterface $request, ResponseInterface $response)
+    public function getVideoCateTree()
     {
         try {
 
@@ -234,7 +234,7 @@ class IndexController extends AbstractController
         }
     }
 
-    public function getBannerCateTree(RequestInterface $request, ResponseInterface $response)
+    public function getBannerCateTree()
     {
         try {
 
