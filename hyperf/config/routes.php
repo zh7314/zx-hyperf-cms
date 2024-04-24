@@ -28,7 +28,7 @@ Router::addGroup('/api/admin', function () {
     Router::post('/getCaptcha', [\App\Controller\Admin\IndexController::class, 'getCaptcha']);
     Router::post('/uploadPic', [\App\Controller\Admin\IndexController::class, 'uploadPic']);
     Router::post('/uploadFile', [\App\Controller\Admin\IndexController::class, 'uploadFile']);
-}, ['middleware' => [CorsMiddleware::class]]);
+});
 
 Router::addGroup('/api/admin', function () {
 

@@ -10,10 +10,8 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-use App\Middleware\CorsMiddleware;
-
 return [
     'http' => [
-//        CorsMiddleware::class,
+        App\Middleware\CorsMiddleware::class,
     ],
 ];

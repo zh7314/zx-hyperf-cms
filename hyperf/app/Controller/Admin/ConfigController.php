@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 
 use App\Service\Admin\ConfigService;
 use Throwable;
-use App\Utils\ResponseTrait;
+use App\Util\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 

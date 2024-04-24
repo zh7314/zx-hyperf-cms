@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Utils;
+namespace App\Util;
 
-use App\Utils\GlobalCode;
-use App\Utils\GlobalMsg;
+use App\Util\GlobalCode;
+use App\Util\GlobalMsg;
 use Hyperf\Contract\ContainerInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpMessage\Stream\SwooleStream;

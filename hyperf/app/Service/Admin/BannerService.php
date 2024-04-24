@@ -5,8 +5,8 @@ namespace App\Service\Admin;
 
 use App\Model\Banner;
 use Exception;
-use App\Utils\GlobalCode;
-use App\Utils\GlobalMsg;
+use App\Util\GlobalCode;
+use App\Util\GlobalMsg;
 
 class BannerService
 {

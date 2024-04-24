@@ -6,8 +6,8 @@ namespace App\Middleware;
 
 use App\Model\Admin;
 use App\Service\Admin\CommonService;
-use App\Utils\GlobalCode;
-use App\Utils\ResponseTrait;
+use App\Util\GlobalCode;
+use App\Util\ResponseTrait;
 use Exception;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface as HttpResponse;

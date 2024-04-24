@@ -5,8 +5,8 @@ namespace App\Service\Admin;
 
 use App\Model\RequestLog;
 use Exception;
-use App\Utils\GlobalCode;
-use App\Utils\GlobalMsg;
+use App\Util\GlobalCode;
+use App\Util\GlobalMsg;
 
 class RequestLogService
 {

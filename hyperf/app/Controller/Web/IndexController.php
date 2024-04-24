@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Web;
 
 use App\Controller\AbstractController;
-use App\Utils\ResponseTrait;
+use App\Util\ResponseTrait;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
 use Throwable;

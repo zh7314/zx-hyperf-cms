@@ -8,7 +8,7 @@ use App\Controller\AbstractController;
 use App\Model\Admin;
 use App\Service\Admin\CommonService;
 use App\Service\Admin\LoginService;
-use App\Utils\ResponseTrait;
+use App\Util\ResponseTrait;
 use Exception;
 use Hyperf\DbConnection\Db;
 use Hyperf\HttpServer\Contract\RequestInterface;
