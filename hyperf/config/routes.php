@@ -15,19 +15,12 @@ use App\Middleware\CorsMiddleware;
 use Hyperf\HttpServer\Router\Router;
 use App\Middleware\AdminCheckMiddleware;
 
-
 Router::get('/', [\App\Controller\Web\IndexController::class, 'index']);
 Router::get('/test', [\App\Controller\Web\IndexController::class, 'test']);
-
-//Router::addGroup();
 
 Router::get('/favicon.ico', function () {
     return '';
 });
-
-Router::addGroup('/v2', function () {
-    Router::get('/index', [\App\Controller\IndexController::class, 'index']);
-}, ['middleware' => [FooMiddleware::class]]);
 
 Router::addGroup('/api/admin', function () {
 
