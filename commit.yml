@@ -3,48 +3,42 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid '87de8871dfd53a629b4c05b72d8e1e91f2a3aef7'
-    oldFile: !uuid '5c150c30f5250ccd46cf691d043cd9271834d07d'
+    newFile: !uuid 'ac3a34f2df080fe35bac1724723b20775494c4e2'
+    oldFile: !uuid '87de8871dfd53a629b4c05b72d8e1e91f2a3aef7'
+  /hyperf/.env:
+    newFile: !uuid '030fc1a30b7f606d9beda4ef3ec6ea65f83f68b6'
+    oldFile: !uuid 'eb655fa7138fd48d6ae58f531e8fb6692e277741'
   /hyperf/app:
-    newFile: !uuid 'f164c98f03b69d3ba5a54711e2f1051263339207'
-    oldFile: !uuid 'e0160ad9349869371d02899320301e70c87badc7'
-  /hyperf/app/Controller:
-    newFile: !uuid '63df86a12890ac63ff84f0229b5a5a7e2776dce8'
-    oldFile: !uuid 'f73636d9c5c899a0d972aaafc58aaf6be5f8b872'
-  /hyperf/app/Controller/Admin:
-    newFile: !uuid '88d4286cebcbb6297cc8be03477f0b80d0af7819'
-    oldFile: !uuid '515cbc77bfc763c287b0e16d06d92de47af76d60'
-  /hyperf/app/Controller/Admin/IndexController.php:
-    newFile: !uuid '25590087101d9850240259be48d6e270cacba71e'
-    oldFile: !uuid '72b5c0fbd22b9db7eaa7dea16887d911098cc846'
+    newFile: !uuid '1c457e886fc77ec0781fa178dc97a23747a446e9'
+    oldFile: !uuid 'f164c98f03b69d3ba5a54711e2f1051263339207'
+  /hyperf/app/Exception:
+    newFile: !uuid '4f681d50f34a9831d1d1cecda2e8df5b827d3bd3'
+    oldFile: !uuid '4f8e10913bb8e25075b8756d2e5287f129be84de'
+  /hyperf/app/Exception/Handler:
+    newFile: !uuid '12e78e79fffed61317ec3d70d590e6c1ba278055'
+    oldFile: !uuid 'dad0d5576a015471a32257f06d68d0eebed9f04f'
+  /hyperf/app/Exception/Handler/HttpExceptionHandler.php:
+    newFile: !uuid '876b673dd0bcb252c67b0f019f4ea5f2d361d56e'
+    oldFile: null
   /hyperf/app/Middleware:
-    newFile: !uuid '47f4cf6963dfb29408d69eaedac4711e59edcf1f'
-    oldFile: !uuid 'ea64147695a95c56122de73ba5707c626bfc5738'
+    newFile: !uuid 'c23f38706030cdae4c9c78aaed43e35a6946564f'
+    oldFile: !uuid '47f4cf6963dfb29408d69eaedac4711e59edcf1f'
   /hyperf/app/Middleware/CorsMiddleware.php:
-    newFile: !uuid '042d00666e9b83c20de228de85f94c7ef3c84cf5'
-    oldFile: !uuid '191ea95e81524a62dab432b41e963d25aadce7a6'
-  /hyperf/app/Service:
-    newFile: !uuid 'f2e5b38bd0d15fef5d739b423a0c8969145ab93b'
-    oldFile: !uuid '104b7dc95cceb1ee9c9c25bff05a9b04f1a3cb65'
-  /hyperf/app/Service/Admin:
-    newFile: !uuid '12b7fd331e87d84e5fb08e276279b6a8e2605d4e'
-    oldFile: !uuid '22535788a6672931b8b1fe5de9a74830146669f3'
-  /hyperf/app/Service/Admin/LoginService.php:
-    newFile: !uuid 'f08c5d46b6cbd224d1bcbbda19189152bb6f8d32'
-    oldFile: !uuid '7193ae8cbfbd66ea12a7ab81549a28e41f11482e'
+    newFile: !uuid 'f8ef37decb191b764c5fa20ed0e2b9645a3e37a7'
+    oldFile: !uuid '042d00666e9b83c20de228de85f94c7ef3c84cf5'
   /hyperf/config:
-    newFile: !uuid 'f0f66ebe0dde12fdca7e9b82f8cf3d2e92fd0b7d'
-    oldFile: !uuid '4ab0547cdc9409525ec15146eec7771352fdf88e'
+    newFile: !uuid '4b02e1ffb0fe2cc55ec3b7bb7766b9d97116a8ea'
+    oldFile: !uuid 'f0f66ebe0dde12fdca7e9b82f8cf3d2e92fd0b7d'
   /hyperf/config/autoload:
-    newFile: !uuid 'e33a3db04a4bdd8df5d969846898da207002f545'
-    oldFile: !uuid 'fba5b3a1b5f02cb0a8574d49484760ed5416bfc6'
-  /hyperf/config/autoload/middlewares.php:
-    newFile: !uuid '2a8f01a9dd6b095b8d8e944064c31acaba379f4d'
-    oldFile: !uuid '49bdec2a2f69afb195fe6e616ee49e29bcea3ee0'
+    newFile: !uuid '09f4b4d9b4c77792b74524b0b5de2e82583c236a'
+    oldFile: !uuid 'e33a3db04a4bdd8df5d969846898da207002f545'
+  /hyperf/config/autoload/exceptions.php:
+    newFile: !uuid '99325144280a9a89983262c5eebddd21c00e2778'
+    oldFile: !uuid 'b848177d27944996490e2cbaff3a64850de246f9'
   /hyperf/config/routes.php:
-    newFile: !uuid '1c0edbbe2fe1ff9b0ed8e19b0d73fcf033310202'
-    oldFile: !uuid 'b43515f1f30a123dafe685f1cd9c17ab22ab7c41'
-gitCommitId: !uuid 'b4553507c84a3008ccc23af91bdc1122dc353a16'
+    newFile: !uuid '35ef70f9990b499e41720e0bdbd912c1cc765892'
+    oldFile: !uuid '1c0edbbe2fe1ff9b0ed8e19b0d73fcf033310202'
+gitCommitId: !uuid 'e26d9d418552efe230a70274ea0f62a3088c7569'
 renames: {
   }
-revisionId: 19
+revisionId: 20
