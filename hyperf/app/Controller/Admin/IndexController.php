@@ -19,7 +19,7 @@ class IndexController extends AbstractController
 {
     use ResponseTrait;
 
-    public function getCaptcha(RequestInterface $request, ResponseInterface $response)
+    public function getCaptcha()
     {
         try {
             $data = app('captcha')->create('default', true);
@@ -80,8 +80,10 @@ class IndexController extends AbstractController
     public function getMenu()
     {
         try {
+            p($this->request->getAttribute('admin_id'));
+            p($this->request->getAttribute('token'));
 
-            $adminId = parameterCheck($this->request->admin_id, 'string', '');
+            $adminId = parameterCheck($this->request->getAttribute('admin_id'), 'string', '');
 
             $data = LoginService::getMenu($adminId);
 

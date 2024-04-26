@@ -1,4 +1,4 @@
-<?php 
+<?php
 declare(strict_types=1);
 
 namespace App\Controller\Admin;
@@ -9,17 +9,19 @@ use App\Util\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class AdminLogController extends AbstractController{
+class AdminLogController extends AbstractController
+{
 
     use ResponseTrait;
 
-    public function getList() {
+    public function getList()
+    {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'),'int',0);
-            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
+            $page = parameterCheck($this->request->input('page'), 'int', 0);
+            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
 
-                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['admin_name'] = parameterCheck($this->request->input('admin_name'), 'string', '');
             $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -29,7 +31,7 @@ class AdminLogController extends AbstractController{
             $where['route_name'] = parameterCheck($this->request->input('route_name'), 'string', '');
             $where['url'] = parameterCheck($this->request->input('url'), 'string', '');
 
-            $data = AdminLogService::getList($where,$page,$pageSize);
+            $data = AdminLogService::getList($where, $page, $pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -37,11 +39,12 @@ class AdminLogController extends AbstractController{
         }
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         try {
             $where = [];
 
-                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['admin_name'] = parameterCheck($this->request->input('admin_name'), 'string', '');
             $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -75,12 +78,13 @@ class AdminLogController extends AbstractController{
         }
     }
 
-    public function add() {
+    public function add()
+    {
 
         Db::beginTransaction();
         try {
             $where = [];
-                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['admin_name'] = parameterCheck($this->request->input('admin_name'), 'string', '');
             $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -100,13 +104,14 @@ class AdminLogController extends AbstractController{
         }
     }
 
-    public function save() {
+    public function save()
+    {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-                        $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
+            $where['admin_id'] = parameterCheck($this->request->input('admin_id'), 'float', 0);
             $where['admin_name'] = parameterCheck($this->request->input('admin_name'), 'string', '');
             $where['data'] = parameterCheck($this->request->input('data'), 'string', '');
             $where['method'] = parameterCheck($this->request->input('method'), 'string', '');
@@ -126,7 +131,8 @@ class AdminLogController extends AbstractController{
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
 
         Db::beginTransaction();
         try {

@@ -238,4 +238,4 @@ Router::addGroup('/api/admin', function () {
         Router::post('/save', [\App\Controller\Admin\VideoCateController::class, 'save']);
         Router::post('/delete', [\App\Controller\Admin\VideoCateController::class, 'delete']);
     });
-}, ['middleware' => [AdminCheckMiddleware::class, CorsMiddleware::class]]);
+}, ['middleware' => [AdminCheckMiddleware::class]]);
