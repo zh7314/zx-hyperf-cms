@@ -7,6 +7,11 @@ namespace App\Service\Admin;
 use App\Model\Admin;
 use App\Model\AdminGroup;
 use App\Model\AdminPermission;
+use App\Model\BannerCate;
+use App\Model\DownloadCate;
+use App\Model\NewsCate;
+use App\Model\ProductCate;
+use App\Model\VideoCate;
 use Exception;
 
 class CommonService

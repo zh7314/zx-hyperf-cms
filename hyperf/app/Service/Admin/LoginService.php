@@ -155,6 +155,7 @@ class LoginService
         if (empty($where['confirmNewPassword'])) {
             throw new Exception('用户新确认密码不能为空');
         }
+
         $admin = Admin::where('id', $where['id'])->first();
         if ($admin == null) {
             throw new Exception('该用户不存在');
@@ -168,6 +169,7 @@ class LoginService
         }
         $admin->password = md5(md5($where['userPassword'] . $admin->salt));
         $res = $admin->save();
+
         if ($res == false) {
             throw new Exception('修改密码失败');
         }

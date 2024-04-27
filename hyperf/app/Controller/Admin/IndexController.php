@@ -82,8 +82,7 @@ class IndexController extends AbstractController
     {
         try {
 
-//            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
-            $adminId = parameterCheck(Context::get('admin_id'), 'int', 0);
+            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
 
             $data = LoginService::getMenu($adminId);
 
@@ -138,14 +137,14 @@ class IndexController extends AbstractController
             return $this->fail($e);
         }
     }
-
+    //有bug
     public function changePwd()
     {
 
         Db::beginTransaction();
         try {
             $where = [];
-            $where['id'] = parameterCheck($this->request->input('admin_id'), 'int', 0);
+            $where['id'] = parameterCheck($this->request->admin_id, 'int', 0);
 
             $where['userPassword'] = parameterCheck($this->request->input('userPassword'), 'string', '');
             $where['newPassword'] = parameterCheck($this->request->input('newPassword'), 'string', '');

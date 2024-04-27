@@ -1,4 +1,4 @@
-<?php 
+<?php
 declare(strict_types=1);
 
 namespace App\Controller\Admin;
@@ -9,17 +9,19 @@ use App\Util\ResponseTrait;
 use Hyperf\DbConnection\Db;
 use App\Controller\AbstractController;
 
-class AdminController extends AbstractController{
+class AdminController extends AbstractController
+{
 
     use ResponseTrait;
 
-    public function getList() {
+    public function getList()
+    {
         try {
             $where = [];
-            $page = parameterCheck($this->request->input('page'),'int',0);
-            $pageSize = parameterCheck($this->request->input('pageSize'),'int',0);
+            $page = parameterCheck($this->request->input('page'), 'int', 0);
+            $pageSize = parameterCheck($this->request->input('pageSize'), 'int', 0);
 
-                        $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
+            $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
             $where['avatar'] = parameterCheck($this->request->input('avatar'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['is_admin'] = parameterCheck($this->request->input('is_admin'), 'int', 0);
@@ -35,7 +37,7 @@ class AdminController extends AbstractController{
             $where['token'] = parameterCheck($this->request->input('token'), 'string', '');
             $where['token_time'] = parameterCheck($this->request->input('token_time'), 'string', '');
 
-            $data = AdminService::getList($where,$page,$pageSize);
+            $data = AdminService::getList($where, $page, $pageSize);
 
             return $this->success($data);
         } catch (Throwable $e) {
@@ -43,11 +45,12 @@ class AdminController extends AbstractController{
         }
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         try {
             $where = [];
 
-                        $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
+            $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
             $where['avatar'] = parameterCheck($this->request->input('avatar'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['is_admin'] = parameterCheck($this->request->input('is_admin'), 'int', 0);
@@ -87,12 +90,13 @@ class AdminController extends AbstractController{
         }
     }
 
-    public function add() {
+    public function add()
+    {
 
         Db::beginTransaction();
         try {
             $where = [];
-                        $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
+            $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
             $where['avatar'] = parameterCheck($this->request->input('avatar'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['is_admin'] = parameterCheck($this->request->input('is_admin'), 'int', 0);
@@ -118,13 +122,14 @@ class AdminController extends AbstractController{
         }
     }
 
-    public function save() {
+    public function save()
+    {
 
         Db::beginTransaction();
         try {
             $where = [];
             $where['id'] = parameterCheck($this->request->input('id'), 'int', 0);
-                        $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
+            $where['admin_group_ids'] = parameterCheck($this->request->input('admin_group_ids'), 'string', '');
             $where['avatar'] = parameterCheck($this->request->input('avatar'), 'string', '');
             $where['email'] = parameterCheck($this->request->input('email'), 'string', '');
             $where['is_admin'] = parameterCheck($this->request->input('is_admin'), 'int', 0);
@@ -150,7 +155,8 @@ class AdminController extends AbstractController{
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
 
         Db::beginTransaction();
         try {

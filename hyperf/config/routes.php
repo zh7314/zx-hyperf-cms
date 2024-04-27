@@ -47,7 +47,7 @@ Router::addGroup('/api/admin', function () {
     Router::post('/getBannerCateTree', [\App\Controller\Admin\IndexController::class, 'getBannerCateTree']);
 
     Router::addGroup('/admin', function () {
-        Router::get('/getList', [\App\Controller\Admin\AdminController::class, 'getList']);
+        Router::post('/getList', [\App\Controller\Admin\AdminController::class, 'getList']);
         Router::post('/getAll', [\App\Controller\Admin\AdminController::class, 'getAll']);
         Router::post('/getOne', [\App\Controller\Admin\AdminController::class, 'getOne']);
         Router::post('/add', [\App\Controller\Admin\AdminController::class, 'add']);
