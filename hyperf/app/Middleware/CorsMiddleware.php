@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Middleware;
 
 use Hyperf\Context\Context;
+use Hyperf\HttpMessage\Stream\SwooleStream;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -21,12 +22,10 @@ class CorsMiddleware implements MiddlewareInterface
             ->withHeader('Access-Control-Allow-Methods', '*')
             ->withHeader('Access-Control-Allow-Headers', '*');
 
-//        ->withHeader('Access-Control-Allow-Headers', 'DNT,Keep-Alive,User-Agent,Cache-Control,Content-Type,Authorization');
-
         Context::set(ResponseInterface::class, $response);
 
         if ($request->getMethod() == 'OPTIONS') {
-            return $response;
+            return $response->withStatus(204)->withBody(new SwooleStream(''));
         }
 
         return $handler->handle($request);
