@@ -9,6 +9,7 @@ use App\Service\Admin\CommonService;
 use App\Util\GlobalCode;
 use App\Util\ResponseTrait;
 use Exception;
+use Hyperf\Context\Context;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface as HttpResponse;
 use Psr\Container\ContainerInterface;
@@ -56,26 +57,14 @@ class AdminCheckMiddleware implements MiddlewareInterface
             if ((int)time() > ((int)strtotime($admin->token_time) + (int)GlobalCode::TOKEN_TIME)) {
                 throw new Exception('token过期，请重新登录');
             }
+            //两种方式都加上，防止未来开发需求
+            $this->request->admin_id = $admin->id;
+            $this->request->token = $token;
 
-//            p($admin->toArray());
-//            p($admin->id);
-//            p($token);
-            $this->request->withAttribute('admin_id', $admin->id);
-            $this->request->withAttribute('token', $token);
-
-//            \Hyperf\Utils\Context::set('my_global_param', 'global_value');
-//            // 获取参数
-//            $myParam = $request->getAttribute('my_param');
-
-//            p($this->request->all());
-//            p($this->request->input('admin_id'));
-//            p($this->request->input('token'));
-//
-//            p($this->request->getAttribute('admin_id'));
-//            p($this->request->getAttribute('token'));
+            Context::set('admin_id', $admin->id);
+            Context::set('token', $token);
 
             $request_url = $this->request->getUri()->getPath();
-//            p($request_url);
 
             try {
                 //权限验证

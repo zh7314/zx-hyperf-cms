@@ -10,6 +10,7 @@ use App\Service\Admin\CommonService;
 use App\Service\Admin\LoginService;
 use App\Util\ResponseTrait;
 use Exception;
+use Hyperf\Context\Context;
 use Hyperf\DbConnection\Db;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
@@ -53,7 +54,7 @@ class IndexController extends AbstractController
     {
         try {
 
-            $adminId = parameterCheck($this->request->admin_id, 'string', '');
+            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
 
             $data = LoginService::logout($adminId);
 
@@ -67,7 +68,7 @@ class IndexController extends AbstractController
     {
         try {
 
-            $adminId = parameterCheck($this->request->admin_id, 'string', '');
+            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
 
             $data = LoginService::getInfo($adminId);
 
@@ -80,10 +81,9 @@ class IndexController extends AbstractController
     public function getMenu()
     {
         try {
-            p($this->request->getAttribute('admin_id'));
-            p($this->request->getAttribute('token'));
 
-            $adminId = parameterCheck($this->request->getAttribute('admin_id'), 'string', '');
+//            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
+            $adminId = parameterCheck(Context::get('admin_id'), 'int', 0);
 
             $data = LoginService::getMenu($adminId);
 
@@ -131,10 +131,7 @@ class IndexController extends AbstractController
     public function getVersion()
     {
         try {
-
             $data = LoginService::getVersion();
-
-//            return $this->grant(new Exception('sssss'));
 
             return $this->success($data);
         } catch (Throwable $e) {
