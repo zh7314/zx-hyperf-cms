@@ -3,45 +3,12 @@ branches: {
   }
 fileChange:
   /hyperf:
-    newFile: !uuid '84dce80e9f5138b3fd321c0eb49d906593cd6321'
-    oldFile: !uuid 'd734fed030abf70e5b4f25f3ce6c5260a730e0f6'
-  /hyperf/app:
-    newFile: !uuid '112d5b554d6bf8dea3969bae2ad351bbde547d1f'
-    oldFile: !uuid '2601aea8341db1026f46ecf015a40648fb2429c5'
-  /hyperf/app/Controller:
-    newFile: !uuid 'd2f784d6bfd6ba260540ee26a21b9ce24bb70fa8'
-    oldFile: !uuid '9174517a231d27dd1e38703a6b569f27af266a1c'
-  /hyperf/app/Controller/Admin:
-    newFile: !uuid '6c838ccdd866063d6d14476d04fe2d9676f44dc1'
-    oldFile: !uuid '07cce7efe04ab5d20290e9cd4c75138f5e1603b8'
-  /hyperf/app/Controller/Admin/IndexController.php:
-    newFile: !uuid 'a52bb37b93790ccc9227aeef6174913dcbf5588e'
-    oldFile: !uuid '63fc9b203a3462b554d506108593a7dbc5106749'
-  /hyperf/app/Service:
-    newFile: !uuid '6d7dffa384d30764e89f7195a9229fba9a739c01'
-    oldFile: !uuid 'cf5863fd30440d56818f8fa8888c291c4e885af6'
-  /hyperf/app/Service/Admin:
-    newFile: !uuid '6e532e06d9a39c692cd54948f16ef0700705b402'
-    oldFile: !uuid '95c02fa52026286d17b12e159c8aaa44fec78930'
-  /hyperf/app/Service/Admin/CommonService.php:
-    newFile: !uuid '3916824b28fad87b11016f5607459eaab9d0ee91'
-    oldFile: !uuid 'f256bfc4f612655c57179661b2b3cfaae243713d'
-  /hyperf/app/Service/Admin/LoginService.php:
-    newFile: !uuid 'b25302c27157792f6f368aa88a91e12cada7fab5'
-    oldFile: !uuid 'aedfeeb63e77f5246d3744d0aa477afc086cd698'
-  /hyperf/config:
-    newFile: !uuid '61381e5ea7503ced0df4f712e88e18545ba01f25'
-    oldFile: !uuid 'c12d8b5768aaf3b33761cb6baed98ade9ebf9c48'
-  /hyperf/config/autoload:
-    newFile: !uuid 'c7c2a16f0157ef1f45cf5b35f010e262ce6ce889'
-    oldFile: !uuid '3a4a82565e281baad2087a403d3e93932e0e9107'
-  /hyperf/config/autoload/file.php:
-    newFile: !uuid '0f23cb4687061e5219a18b39acc12d6226885dad'
-    oldFile: null
-  /hyperf/config/autoload/server.php:
-    newFile: !uuid '475f74a4b998f705e3b2f56c10c731773e8eb09a'
-    oldFile: !uuid '08462464ae6c872d02f0c104bfbeae8a2215184d'
-gitCommitId: !uuid 'd6defd55132d6abd5c9721d85ecfcfed70aeaa1e'
+    newFile: !uuid '74ee950ac12172187b72b9f128f6428f08066345'
+    oldFile: !uuid '84dce80e9f5138b3fd321c0eb49d906593cd6321'
+  /hyperf/composer.json:
+    newFile: !uuid '179be1ef40e1f09b93ec1f4ad39da85a30fd66a0'
+    oldFile: !uuid '57a93616ed843e613a4b457926efb7fbae414181'
+gitCommitId: !uuid '3b1b732dc21663f14564a45eaf45aa4c7a97d269'
 renames: {
   }
-revisionId: 27
+revisionId: 28
