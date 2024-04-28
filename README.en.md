@@ -1,19 +1,19 @@
-# CMS, enterprise official website general Golang management system
+# CMS, enterprise official website general hyperf management system
 
 [中文文档](./README.md)
 
 
 ## Framework introduction
-[Goravel](https://github.com/goravel/goravel)    
+[hyperf](https://github.com/hyperf/hyperf)     
 [SCUI](https://gitee.com/lolicode/scui)
 
 
 ### Back-end development component
-go 1.20     
-Goravel 1.13     
+php 8.1  
+hyperf 3.1     
 
 ### database sql(use the latest date file)
-`goravel\doc\sql_bak` 
+`hyperf\doc\sql_bak` 
 mysql 8.0
 Default system account password: admin/admin
 

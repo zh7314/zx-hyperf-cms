@@ -1,20 +1,20 @@
-# CMS，企业官网通用Golang后台管理系统
+# CMS，企业官网通用hyperf后台管理系统
 
 [English doc](./README.en.md)  
 
 
 ## 框架介绍
-[Goravel](https://github.com/goravel/goravel)    
+[hyperf](https://github.com/hyperf/hyperf)    
 [SCUI](https://gitee.com/lolicode/scui)
 
 
 ### 后端开发组件
-go 1.20     
-Goravel 1.13    
+php 8.1  
+hyperf 3.1    
 
 ### 数据库 sql(使用最新日期文件)
-`goravel\doc\sql_bak` 
-mysql 8.0
+`hyperf\doc\sql_bak` 
+mysql 8.
 系统默认账号密码： admin/admin
 
 ### 前端开发组件
