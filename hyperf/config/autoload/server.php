@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /**
  * This file is part of Hyperf.
  *
@@ -9,6 +10,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 use Hyperf\Server\Event;
 use Hyperf\Server\Server;
 use Swoole\Constant;
@@ -41,6 +43,9 @@ return [
         Constant::OPTION_MAX_REQUEST => 100000,
         Constant::OPTION_SOCKET_BUFFER_SIZE => 2 * 1024 * 1024,
         Constant::OPTION_BUFFER_OUTPUT_SIZE => 2 * 1024 * 1024,
+        Constant::OPTION_PACKAGE_MAX_LENGTH => 10 * 1024 * 1024,//文件上传大小限制
+        Constant::OPTION_DOCUMENT_ROOT => BASE_PATH . '/public',//静态文件显示地址
+        Constant::OPTION_ENABLE_STATIC_HANDLER => true
     ],
     'callbacks' => [
         Event::ON_WORKER_START => [Hyperf\Framework\Bootstrap\WorkerStartCallback::class, 'onWorkerStart'],

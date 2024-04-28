@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Service\Admin;
 
-
 use App\Model\Admin;
 use App\Model\AdminGroup;
 use App\Model\AdminPermission;
@@ -12,7 +11,10 @@ use App\Model\DownloadCate;
 use App\Model\NewsCate;
 use App\Model\ProductCate;
 use App\Model\VideoCate;
+use App\Util\GlobalCode;
 use Exception;
+use Hyperf\HttpMessage\Upload\UploadedFile;
+use ZX\Tools\File\MimeTypes;
 
 class CommonService
 {
@@ -240,7 +242,9 @@ class CommonService
     //全局通用文件上传组件
     public static function uploadFile(UploadedFile $uploadedFile, array $acceptExt, string $fileType = 'image')
     {
-        $ext = $uploadedFile->clientExtension();
+        $ext = $uploadedFile->getExtension();
+        p($ext);
+
         if (!in_array($ext, $acceptExt)) {
             throw new Exception('文件名后缀不允许');
         }
@@ -254,7 +258,8 @@ class CommonService
 
         $date = date('Ymd');
         $filePath = GlobalCode::UPLOAD_URL . DIRECTORY_SEPARATOR . $fileType . DIRECTORY_SEPARATOR . $date . DIRECTORY_SEPARATOR;
-        $allDir = public_path() . DIRECTORY_SEPARATOR . $filePath;
+        $allDir = 'public' . DIRECTORY_SEPARATOR . $filePath;
+        p($allDir);
 
         if (!is_dir($allDir)) {
             if (!mkdir($allDir, 0755, true)) {
@@ -263,7 +268,10 @@ class CommonService
         }
 
         $fileName = getToken() . '.' . $ext;
-        $uploadedFile->move($allDir . DIRECTORY_SEPARATOR, $fileName);
+        $finalPath = BASE_PATH . DIRECTORY_SEPARATOR . $allDir . DIRECTORY_SEPARATOR . $fileName;
+        $showPath = $filePath . DIRECTORY_SEPARATOR . $fileName;
+
+        $uploadedFile->moveTo($finalPath);
         /*
          * 注意windows下返回的地址可能会出现双斜杠，linux不会
          * windows：http://www.la.com/upload\\image\\20230626\\15d092d9058b7c3ac1952c79ede5b411.jpg
@@ -271,15 +279,18 @@ class CommonService
          */
 //        return $filePath . $fileName;
 
-        return ['id' => uniqid(), 'src' => $filePath . $fileName, 'fileName' => $fileName];
+        return ['id' => uniqid(), 'src' => $showPath, 'fileName' => $fileName];
     }
 
     //检测文件是否合法
     public static function checkMimeType(UploadedFile $uploadedFile, string $ext = '')
     {
         try {
-            $filePath = $uploadedFile->getPathname();
+            $filePath = $uploadedFile->getRealPath();
+            p($uploadedFile->getRealPath());
+
             $fileMimeType = mime_content_type($filePath);
+            p($fileMimeType);
             $mimeTypes = MimeTypes::getImage();
             $isExist = array_key_exists($fileMimeType, $mimeTypes);
 

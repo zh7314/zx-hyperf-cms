@@ -93,16 +93,16 @@ class IndexController extends AbstractController
     }
 
 
-    public function uploadPic()
+    public function uploadPic(RequestInterface $request)
     {
-        $file = $this->request->file('file');
-
+        $file = $request->file('file');
+        p($file);
         try {
-            if ($file == null) {
+            if (!$file->isValid()) {
                 throw new Exception('未找到上传文件');
             }
             $data = CommonService::uploadFile($file, ['jpg', 'jpeg', 'png', 'mbp', 'gif']);
-            $data['src'] = URL::to($data['src']);
+//            $data['src'] = URL::to($data['src']);
 
             return $this->success($data, '上传成功');
         } catch (Throwable $e) {
@@ -119,7 +119,7 @@ class IndexController extends AbstractController
                 throw new Exception('未找到上传文件');
             }
             $data = CommonService::uploadFile($file, ['xls', 'xlsx', 'pdf', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'zip', 'pptx', 'mp4', 'flv'], 'file');
-            $data['src'] = URL::to($data['src']);
+//            $data['src'] = URL::to($data['src']);
 
             return $this->success($data, '上传成功');
         } catch (Throwable $e) {
@@ -137,6 +137,7 @@ class IndexController extends AbstractController
             return $this->fail($e);
         }
     }
+
     //有bug
     public function changePwd()
     {

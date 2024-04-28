@@ -167,7 +167,7 @@ class LoginService
         if ($where['newPassword'] != $where['confirmNewPassword']) {
             throw new Exception('新密码不一样');
         }
-        $admin->password = md5(md5($where['userPassword'] . $admin->salt));
+        $admin->password = md5(md5($where['newPassword'] . $admin->salt));
         $res = $admin->save();
 
         if ($res == false) {
@@ -175,6 +175,4 @@ class LoginService
         }
         return $res;
     }
-
-
 }
