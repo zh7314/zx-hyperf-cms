@@ -243,7 +243,6 @@ class CommonService
     public static function uploadFile(UploadedFile $uploadedFile, array $acceptExt, string $fileType = 'image')
     {
         $ext = $uploadedFile->getExtension();
-        p($ext);
 
         if (!in_array($ext, $acceptExt)) {
             throw new Exception('文件名后缀不允许');
@@ -257,19 +256,20 @@ class CommonService
         }
 
         $date = date('Ymd');
-        $filePath = GlobalCode::UPLOAD_URL . DIRECTORY_SEPARATOR . $fileType . DIRECTORY_SEPARATOR . $date . DIRECTORY_SEPARATOR;
+        $filePath = GlobalCode::UPLOAD_URL . DIRECTORY_SEPARATOR . $fileType . DIRECTORY_SEPARATOR . $date;
         $allDir = 'public' . DIRECTORY_SEPARATOR . $filePath;
-        p($allDir);
 
         if (!is_dir($allDir)) {
             if (!mkdir($allDir, 0755, true)) {
                 throw new Exception('创建文件夹失败');
             }
         }
+        p($allDir);
 
         $fileName = getToken() . '.' . $ext;
         $finalPath = BASE_PATH . DIRECTORY_SEPARATOR . $allDir . DIRECTORY_SEPARATOR . $fileName;
         $showPath = $filePath . DIRECTORY_SEPARATOR . $fileName;
+        p($showPath);
 
         $uploadedFile->moveTo($finalPath);
         /*
@@ -287,10 +287,8 @@ class CommonService
     {
         try {
             $filePath = $uploadedFile->getRealPath();
-            p($uploadedFile->getRealPath());
 
             $fileMimeType = mime_content_type($filePath);
-            p($fileMimeType);
             $mimeTypes = MimeTypes::getImage();
             $isExist = array_key_exists($fileMimeType, $mimeTypes);
 

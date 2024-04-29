@@ -57,10 +57,11 @@ class AdminCheckMiddleware implements MiddlewareInterface
             if ((int)time() > ((int)strtotime($admin->token_time) + (int)GlobalCode::TOKEN_TIME)) {
                 throw new Exception('token过期，请重新登录');
             }
-            //两种方式都加上，防止未来开发需求
-            $this->request->admin_id = $admin->id;
-            $this->request->token = $token;
-
+            //方案一：直接属性复制，不推荐
+//            $this->request->admin_id = $admin->id;
+//            $this->request->token = $token;
+            //方案二：使用上下文工具带过去，
+            //官方的建议：https://hyperf.wiki/3.1/#/zh-cn/controller?id=%e9%81%bf%e5%85%8d%e5%8d%8f%e7%a8%8b%e9%97%b4%e6%95%b0%e6%8d%ae%e6%b7%b7%e6%b7%86
             Context::set('admin_id', $admin->id);
             Context::set('token', $token);
 

@@ -1,7 +1,10 @@
 <?php
 //use Hyperf\HttpServer\Contract\ResponseInterface;
 
+use Hyperf\Context\ApplicationContext;
+use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Response;
+use function Hyperf\Config\config;
 
 if (!function_exists('returnJson')) {
 
@@ -678,25 +681,6 @@ if (!function_exists('getDateStartToEnd')) {
 
 }
 
-if (!function_exists('returnResult')) {
-
-    /**
-     * 自定义返回信息 便于接口返回
-     * @param string $msg
-     * @param array|string $data 如果为空[] 则返回和msg一致内容 小程序那边是需要这样的处理
-     * @param int $code
-     * @return JsonResponse
-     */
-    function returnResult(string $msg = 'success', $data = '', int $code = 200)
-    {
-        if (empty($data)) {
-            $data = $msg;
-        }
-        return response()->json(compact('code', 'msg', 'data'));
-    }
-
-}
-
 //多个参数 bc系列 加 减 乘 除 可扩展
 if (!function_exists('multiple_parameters_bc')) {
     /*
@@ -1057,3 +1041,18 @@ if (!function_exists('mb_padding_str')) {
 
 }
 
+if (!function_exists('to')) {
+    //快捷生成路径
+    function to(string $str = '')
+    {
+        $request = ApplicationContext::getContainer()->get(RequestInterface::class);
+
+        $scheme = $request->getUri()->getScheme() ?? 'http';
+        $host = $request->getUri()->getHost() ?? '127.0.0.1';
+        $port = $request->getUri()->getPort() ?? config('server.servers.port', 9500);
+
+        $url = "{$scheme}://{$host}:{$port}/{$str}";
+        return $url;
+    }
+
+}

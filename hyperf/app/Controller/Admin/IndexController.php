@@ -54,7 +54,7 @@ class IndexController extends AbstractController
     {
         try {
 
-            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
+            $adminId = parameterCheck(Context::get('admin_id'), 'int', 0);
 
             $data = LoginService::logout($adminId);
 
@@ -68,7 +68,7 @@ class IndexController extends AbstractController
     {
         try {
 
-            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
+            $adminId = parameterCheck(Context::get('admin_id'), 'int', 0);
 
             $data = LoginService::getInfo($adminId);
 
@@ -82,7 +82,7 @@ class IndexController extends AbstractController
     {
         try {
 
-            $adminId = parameterCheck($this->request->admin_id, 'int', 0);
+            $adminId = parameterCheck(Context::get('admin_id'), 'int', 0);
 
             $data = LoginService::getMenu($adminId);
 
@@ -96,13 +96,13 @@ class IndexController extends AbstractController
     public function uploadPic(RequestInterface $request)
     {
         $file = $request->file('file');
-        p($file);
+
         try {
             if (!$file->isValid()) {
                 throw new Exception('未找到上传文件');
             }
             $data = CommonService::uploadFile($file, ['jpg', 'jpeg', 'png', 'mbp', 'gif']);
-//            $data['src'] = URL::to($data['src']);
+            $data['src'] = to($data['src']);
 
             return $this->success($data, '上传成功');
         } catch (Throwable $e) {
@@ -110,16 +110,16 @@ class IndexController extends AbstractController
         }
     }
 
-    public function uploadFile()
+    public function uploadFile(RequestInterface $request)
     {
-        $file = $this->request->file('file');
+        $file = $request->file('file');
 
         try {
-            if ($file == null) {
+            if (!$file->isValid()) {
                 throw new Exception('未找到上传文件');
             }
             $data = CommonService::uploadFile($file, ['xls', 'xlsx', 'pdf', 'xls', 'xlsx', 'doc', 'docx', 'ppt', 'zip', 'pptx', 'mp4', 'flv'], 'file');
-//            $data['src'] = URL::to($data['src']);
+            $data['src'] = to($data['src']);
 
             return $this->success($data, '上传成功');
         } catch (Throwable $e) {
@@ -145,7 +145,7 @@ class IndexController extends AbstractController
         Db::beginTransaction();
         try {
             $where = [];
-            $where['id'] = parameterCheck($this->request->admin_id, 'int', 0);
+            $where['id'] = parameterCheck(Context::get('admin_id'), 'int', 0);
 
             $where['userPassword'] = parameterCheck($this->request->input('userPassword'), 'string', '');
             $where['newPassword'] = parameterCheck($this->request->input('newPassword'), 'string', '');
