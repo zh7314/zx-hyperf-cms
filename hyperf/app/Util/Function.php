@@ -1051,7 +1051,12 @@ if (!function_exists('to')) {
         $host = $request->getUri()->getHost() ?? '127.0.0.1';
         $port = $request->getUri()->getPort() ?? config('server.servers.port', 9500);
 
-        $url = "{$scheme}://{$host}:{$port}/{$str}";
+        $url = '';
+        if ($port == 80 || $port == 443) {
+            $url = "{$scheme}://{$host}/{$str}";
+        } else {
+            $url = "{$scheme}://{$host}:{$port}/{$str}";
+        }
         return $url;
     }
 
